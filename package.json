@@ -7,6 +7,7 @@
   },
   "private": true,
   "scripts": {
+    "build": "npm run clean; npm run scripts; npm run styles",
     "clean": "rm -f .DS_Store; rm -f build/images/*; rm -f build/scripts/*; rm -f build/styles/*; rm -f npm-debug.log",
     "images": "node_modules/imagemin/cli.js images/* build/images",
     "scripts": "node_modules/browserify/bin/cmd.js scripts/*.js -o build/scripts/main.js",
