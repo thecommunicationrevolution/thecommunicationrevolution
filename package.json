@@ -1,0 +1,14 @@
+{
+  "devDependencies": {
+    "browserify": "^8.1.3",
+    "node-sass": "^2.0.0-beta",
+    "vigilia": "^0.1.0"
+  },
+  "private": true,
+  "scripts": {
+    "clean": "rm -f build/scripts/*; rm -f build/styles/*",
+    "scripts": "node_modules/browserify/bin/cmd.js scripts/*.js -o build/scripts/main.js",
+    "styles": "node_modules/node-sass/bin/node-sass --output-style compressed styles/major.scss build/styles/major.css; node_modules/node-sass/bin/node-sass --output-style compressed styles/minor.scss build/styles/minor.css",
+    "watch": "node_modules/vigilia/bin/vigilia 'scripts/**/*.js':'npm run scripts' 'styles/**/*.scss':'npm run styles'"
+  }
+}
