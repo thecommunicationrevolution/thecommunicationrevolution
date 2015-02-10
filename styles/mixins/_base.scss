@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 
-body, h1, p {
+body, h1, h2, ul, h3, p {
   margin: 0;
 }
 
@@ -20,6 +20,7 @@ html {
   font-size: 14px;
 
   &:before {
+    position: absolute;
     content: 'The Communication Revolution';
     font: 0/0 Raleway;
   }
@@ -30,6 +31,7 @@ html {
   top: 40px;
   left: 0;
   right: 0;
+  z-index: 5;
 }
 
 .section {
