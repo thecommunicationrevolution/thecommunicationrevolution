@@ -2,6 +2,20 @@
   background-color: rgb(255, 255, 255);
 }
 
+.premises-item {
+  display: block;
+  float: left;
+  width: 33.33333%;
+}
+
+.premises-list {
+  display: block;
+  overflow: hidden;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1000px;
+}
+
 .premises-title {
   font-size: 1.74424rem;
   font-weight: 400;
