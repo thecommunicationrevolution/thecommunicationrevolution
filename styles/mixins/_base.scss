@@ -19,3 +19,9 @@ html {
   @extend %type-raleway;
   font-size: 14px;
 }
+
+.page {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
