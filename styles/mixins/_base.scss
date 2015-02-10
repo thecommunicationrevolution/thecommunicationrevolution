@@ -18,6 +18,11 @@ html {
   color: rgb(0, 0, 0);
   @extend %type-raleway;
   font-size: 14px;
+
+  &:before {
+    content: 'The Communication Revolution';
+    font: 0/0 Raleway;
+  }
 }
 
 .page {
