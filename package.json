@@ -1,4 +1,4 @@
-{
+ {
   "devDependencies": {
     "browserify": "^8.1.3",
     "imagemin": "^3.1.0",
@@ -7,7 +7,8 @@
   },
   "private": true,
   "scripts": {
-    "build": "npm run clean; npm run scripts; npm run styles",
+    "tree": "mkdir -p build/styles; mkdir -p build/scripts; mkdir -p build/images;",
+    "build": "npm run clean; npm run tree; npm run scripts; npm run styles;",
     "clean": "rm -f build/images/*; rm -f build/scripts/*; rm -f build/styles/*; rm -f npm-debug.log",
     "images": "node_modules/imagemin/cli.js images/* build/images",
     "scripts": "node_modules/browserify/bin/cmd.js scripts/*.js -o build/scripts/main.js",
