@@ -1,0 +1,7 @@
+{
+  "devDependencies": {
+    "bourbon": "~4.2.0"
+  },
+  "name": "thecommunicationrevolution",
+  "private": true
+}
