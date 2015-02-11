@@ -16,10 +16,19 @@
     }
     
     button {
-      padding-left: 3rem;
-      margin-top: 1rem;
+      background: rgba(0, 0, 0, 0);
+      border: 2px solid white;
+      color: rgb(255, 255, 255);
+      font-size: .85rem;
+      font-weight: 700;
+      padding: 1rem 1.25rem 1.25rem 3rem;
       opacity: 0;
+      @include transition(background-color 0.25s linear);
       @include fadein(.5s, .5s);
+
+      &:hover {
+        background: rgba(0, 0, 0, .25);
+      }
 
       &::before {
         content: '';
