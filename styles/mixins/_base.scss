@@ -19,14 +19,19 @@ body {
   color: $general-font-color;
 }
 
+button, html {
+  @extend %type-raleway;
+}
+
 button {
   background-color: transparent;
   border: 0;
+  cursor: pointer;
+  outline: 0;
 }
 
 html {
   color: rgb(0, 0, 0);
-  @extend %type-raleway;
   font-size: 14px;
 
   &:before {
@@ -80,4 +85,8 @@ ul {
   position: relative;
   width: 100%;
   min-height: 100%;
+}
+
+#premises {
+  visibility: hidden;
 }
