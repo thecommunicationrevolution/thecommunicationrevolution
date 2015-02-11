@@ -4,7 +4,6 @@
 
 body, button, h1, h2, ul, h3, p {
   margin: 0;
-  color: $general-font-color;
 }
 
 body, html {
@@ -17,6 +16,7 @@ button, ul {
 
 body {
   background-color: $general-background-color;
+  color: $general-font-color;
 }
 
 html {
