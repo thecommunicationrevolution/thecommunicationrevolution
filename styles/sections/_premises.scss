@@ -1,11 +1,22 @@
 #premises {
   background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  visibility: visible;
+  overflow: auto;
 }
 
 .premises-item {
+  position: relative;
+  margin-bottom: 50px;
+  margin-right: 1px;
   display: block;
   float: left;
-  width: 33.33333%;
+  width: 340px;
+  height: 576px;
+
+  &:nth-child(3n) {
+    margin-right: 0;
+  }
 }
 
 .premises-list {
@@ -13,13 +24,38 @@
   overflow: hidden;
   margin: 0 auto;
   width: 100%;
-  max-width: 1000px;
+  max-width: 1022px;
+}
+
+.premises-more {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  background-color: rgba(0, 0, 0, 0.02);
+  border: 1px solid rgb(0, 0, 0);
+  padding: 2em;
+  @include transform(translateX(-50%));
 }
 
 .premises-title {
   font-size: 1.74424rem;
   font-weight: 400;
   line-height: 1;
+  margin-bottom: 33px;
+  margin-top: 70px;
   text-align: center;
   text-transform: uppercase;
+}
+
+.premises-watch {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  font-size: 2rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  width: 100%;
+  height: 360px;
 }
