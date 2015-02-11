@@ -12,7 +12,12 @@
   display: block;
   float: left;
   width: 340px;
-  height: 576px;
+  height: 667px;
+
+  &:hover .premises-more {
+    border-color: rgba(0, 0, 0, 1);
+    opacity: 1;
+  }
 
   &:nth-child(3n) {
     margin-right: 0;
@@ -32,9 +37,23 @@
   bottom: 0;
   left: 50%;
   background-color: rgba(0, 0, 0, 0.02);
-  border: 1px solid rgb(0, 0, 0);
-  padding: 2em;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  font-weight: 700;
+  opacity: 0.6;
+  padding: 0 1.5em;
   @include transform(translateX(-50%));
+  @include transition(background-color 0.2s, border-color 0.2s, opacity 0.2s);
+  height: 47px;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.04);
+  }
+}
+
+.premises-text {
+  line-height: 1.4;
+  padding: 2rem;
+  text-align: center;
 }
 
 .premises-title {
@@ -48,14 +67,57 @@
 }
 
 .premises-watch {
-  position: absolute;
-  top: 0;
-  left: 0;
   background-color: rgb(0, 0, 0);
+  background-size: cover;
   color: rgb(255, 255, 255);
+  display: block;
   font-size: 2rem;
   font-weight: 300;
   text-transform: uppercase;
   width: 100%;
   height: 360px;
+}
+
+.premises-bebeta .premises-watch {
+  background-image: url('//i.vimeocdn.com/video/500219049_960x540.jpg');
+}
+
+.premises-becollaborative .premises-watch {
+  background-image: url('//i.vimeocdn.com/video/500302294_295x166.jpg');
+}
+
+.premises-beintuitive .premises-watch {
+  background-image: url('//i.vimeocdn.com/video/500217687_960x540.jpg');
+}
+
+.premises-bepart .premises-watch {
+  background-image: url('//i.vimeocdn.com/video/500195390_295x166.jpg');
+}
+
+.premises-betrue .premises-watch {
+  background-image: url('//i.vimeocdn.com/video/500193645_960x540.jpg');
+}
+
+.premises-betrusted .premises-watch {
+  background-image: url('//i.vimeocdn.com/video/500250027_960x540.jpg');
+}
+
+.premises-beuseful .premises-watch {
+  background-image: url('//i.vimeocdn.com/video/500250354_960x540.jpg');
+}
+
+.premises-thinkahead .premises-watch {
+  background-image: url('//i.vimeocdn.com/video/500250421_960x540.jpg');
+}
+
+.premises-thinkhigher .premises-watch {
+  background-image: url('//i.vimeocdn.com/video/500250510_295x166.jpg');
+}
+
+.premises-thinkmobile .premises-watch {
+  background-image: url('//i.vimeocdn.com/video/500250137_295x166.jpg');
+}
+
+.premises-thinkplural .premises-watch {
+  background-image: url('//i.vimeocdn.com/video/500194496_960x540.jpg');
 }
