@@ -5,9 +5,11 @@
   .intro {
     position: absolute;
     top: 50%;
-    transform: translate(50%, -50%);
     text-align: center;
-    width: 50%;
+    left: 0;
+    margin-top: -158px;
+    min-width: 570px;
+    right: 0;
 
     h3, h1 {
       margin-bottom: 1rem;
@@ -23,6 +25,7 @@
       font-weight: 700;
       padding: 1rem 1.25rem 1.25rem 3rem;
       opacity: 0;
+      margin-top: 1rem;
       @include transition(background-color 0.25s linear);
       @include fadein(.5s, .5s);
 
@@ -38,7 +41,7 @@
         border-bottom: .85rem solid transparent;
         border-left: 15px solid white;
         position: absolute;
-        top: 1rem;
+        top: .8rem;
         left: 1rem;
       }  
     }
