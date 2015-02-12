@@ -14,7 +14,8 @@ function scrollToSection(e) {
     elementScrollTop -= 65;
 
   scroll(elementScrollTop, {
-    ease: 'inOutCirc'
+    ease: 'inOutCirc',
+    duration: 1000
   });
 }
 

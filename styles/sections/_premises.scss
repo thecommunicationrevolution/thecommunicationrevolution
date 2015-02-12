@@ -21,7 +21,7 @@
   margin-right: 1px;
   display: block;
   float: left;
-  @include transition(background-color 0.1s);
+  @include transition(background-color 0.25s);
   width: 340px;
   height: 716px;
 
@@ -131,7 +131,7 @@
     background-size: cover;
     @include transform(scale(1) translateZ(0));
     @include transition-property(transform);
-    @include transition-duration(0.1s);
+    @include transition-duration(.65s);
     z-index: 5;
   }
 }
