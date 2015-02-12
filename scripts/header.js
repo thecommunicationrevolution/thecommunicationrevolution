@@ -1,5 +1,6 @@
 var scroll = require('./scroll');
 var header,
+    scrollButton,
     element,
     status,
     links,
@@ -21,11 +22,14 @@ function scrollToSection(e) {
 
 header = function() {
   element = document.getElementById('header');
-  links = element.getElementsByTagName('a');
+  links = document.getElementsByTagName('a');
+  scrollButton = document.getElementById('start-scroll');
   
   for (var i = links.length - 1; i >= 0; i--) {
     links[i].addEventListener('click', scrollToSection);
   };
+
+  scrollButton.addEventListener('click', scrollToSection);
 
   window.onscroll = function(e) {
     if (!status && document.body.scrollTop > 25) {
