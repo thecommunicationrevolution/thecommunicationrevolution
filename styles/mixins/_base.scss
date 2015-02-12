@@ -17,7 +17,6 @@ button, ul {
 body {
   background-color: $general-background-color;
   color: $general-font-color;
-  min-width: 640px;
 }
 
 button, html {
@@ -70,7 +69,6 @@ h3 {
   z-index: 20;
   opacity: 0;
   height: 118px;
-  min-width: 640px;
   @include transition(background-color 0.5s linear);
   @include fadein(.5s, 1.25s);
 
@@ -84,10 +82,14 @@ h3 {
       margin-left: 1em;
       height: 100%;
       display: block;
+
+      &:first-child {
+        margin-left: 0;
+      }
     }
 
     .nav-list__item.logo {
-      margin: 0 2em 0 2.5em;
+      margin: 0 1em 0 2em;
       
       img {
         vertical-align: middle;
@@ -103,6 +105,7 @@ h3 {
       line-height: 118px;
       height: 100%;
       display: block;
+      text-shadow: .1rem .1rem .25rem rgba(0, 0, 0, .25);
 
       &:hover {
         text-decoration: underline;
@@ -133,9 +136,14 @@ h3 {
   position: relative;
   width: 100%;
   min-height: 100%;
-  min-width: 640px;
 }
 
+// below the fold
+
 #premises {
+  visibility: hidden;
+}
+
+#thinkers {
   visibility: hidden;
 }

@@ -1,9 +1,30 @@
+var scroll = require('./scroll');
 var header,
     element,
-    status;
+    status,
+    links,
+    timer;
+
+function scrollToSection(e) {
+  e.preventDefault();
+  var section = document.getElementById(e.currentTarget.getAttribute('href')),
+      elementScrollTop = section.offsetTop;
+
+  if (section.id !== 'landing')
+    elementScrollTop -= 65;
+
+  scroll(elementScrollTop, {
+    ease: 'inOutCirc'
+  });
+}
 
 header = function() {
   element = document.getElementById('header');
+  links = element.getElementsByTagName('a');
+  
+  for (var i = links.length - 1; i >= 0; i--) {
+    links[i].addEventListener('click', scrollToSection);
+  };
 
   window.onscroll = function(e) {
     if (!status && document.body.scrollTop > 25) {
