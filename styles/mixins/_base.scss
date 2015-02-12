@@ -17,7 +17,6 @@ button, ul {
 body {
   background-color: $general-background-color;
   color: $general-font-color;
-  min-width: 640px;
 }
 
 button, html {
@@ -70,7 +69,6 @@ h3 {
   z-index: 5;
   opacity: 0;
   height: 118px;
-  min-width: 640px;
   @include transition(background-color 0.5s linear);
   @include fadein(.5s, 1.25s);
 
@@ -133,7 +131,6 @@ h3 {
   position: relative;
   width: 100%;
   min-height: 100%;
-  min-width: 640px;
 }
 
 // below the fold
