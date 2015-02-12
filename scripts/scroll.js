@@ -1,40 +1,37 @@
-var raf = require('raf-component')
-var ease = require('ease-component')
-var listener = require('eventlistener')
+var raf = require('raf-component'),
+    ease = require('ease-component');
 
 var scroll = function(to, options) {
-  var type = 'inOutSine'
-  var duration = 350
+  var type = 'inOutSine',
+      duration = 350,
+      cancelled = false,
+      start = +new Date,
+      from = window.scrollY;
 
   options = options || {};
   type = options.ease || type;
+  duration = options.duration || duration;
 
-  var start = +new Date
-  var from = window.scrollY;
-
-  var cancelled = false
-  var cancel = function() {
-    cancelled = true
-    listener.remove(document, 'mousewheel', cancel)
+  function cancel() {
+    cancelled = true;
+    document.removeEventListener('mousewheel', cancel);
   }
 
-  listener.add(document, 'mousewheel', cancel)
-
-  var scroll = function(timestamp) {
-    var now = +new Date
-    var time = Math.min(1, ((now - start) / duration))
-    var eased = ease[type](time)
+  function update(timestamp) {
+    var now = +new Date,
+        time = Math.min(1, ((now - start) / duration)),
+        eased = ease[type](time);
 
     window.scrollTo(0, (eased * (to - from)) + from);
 
-    if (time < 1) {
-      return raf(scroll)
-    }
-    
-    cancel()
+    if (time < 1)
+      return raf(update);
+    else
+      cancel();
   }
 
-  raf(scroll)
+  document.addEventListener('mousewheel', cancel);
+  raf(update);
 }
 
 module.exports = scroll;
