@@ -5,18 +5,38 @@
   overflow: auto;
 }
 
+.premises-hastag {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  display: block;
+  @include transform(translate(-50%, -50%));
+  z-index: 15;
+}
+
 .premises-item {
   position: relative;
-  margin-bottom: 50px;
+  background-color: rgba(0, 0, 0, 0);
+  margin-bottom: 1px;
   margin-right: 1px;
   display: block;
   float: left;
+  @include transition(background-color 0.1s);
   width: 340px;
-  height: 667px;
+  height: 716px;
 
-  &:hover .premises-more {
-    border-color: rgba(0, 0, 0, 1);
-    opacity: 1;
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.02);
+
+    .premises-more {
+      background-color: rgba(0, 0, 0, 0);
+      border-color: rgba(0, 0, 0, 1);
+      opacity: 1;
+    }
+
+    .premises-watch::before {
+      @include transform(scale(1.1) translateZ(0));
+    }
   }
 
   &:nth-child(3n) {
@@ -34,7 +54,7 @@
 
 .premises-more {
   position: absolute;
-  bottom: 0;
+  bottom: 49px;
   left: 50%;
   background-color: rgba(0, 0, 0, 0.02);
   border: 1px solid rgba(0, 0, 0, 0.06);
@@ -45,9 +65,20 @@
   @include transition(background-color 0.2s, border-color 0.2s, opacity 0.2s);
   height: 47px;
 
-  &:hover {
-    background-color: rgba(0, 0, 0, 0.04);
+  &.premises-more:hover {
+    background-color: rgba(255, 255, 255, 1);
   }
+}
+
+.premises-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  fill: rgb(255, 255, 255);
+  @include transform(translate(-50%, -50%));
+  width: 84px;
+  height: 84px;
+  z-index: 20;
 }
 
 .premises-text {
@@ -68,56 +99,83 @@
 
 .premises-watch {
   background-color: rgb(0, 0, 0);
-  background-size: cover;
   color: rgb(255, 255, 255);
   display: block;
   font-size: 2rem;
   font-weight: 300;
+  overflow: hidden;
   text-transform: uppercase;
+  @include transform(translateZ(0));
   width: 100%;
   height: 360px;
+
+  &::after, &:before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    content: '';
+    display: block;
+    width: auto;
+    height: auto;
+  }
+
+  &::after {
+    @include linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3), $fallback: transparent);
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 10;
+  }
+
+  &::before {
+    background-size: cover;
+    @include transform(scale(1) translateZ(0));
+    @include transition-property(transform);
+    @include transition-duration(0.1s);
+    z-index: 5;
+  }
 }
 
-.premises-bebeta .premises-watch {
+.premises-bebeta .premises-watch::before {
   background-image: url('//i.vimeocdn.com/video/500219049_960x540.jpg');
 }
 
-.premises-becollaborative .premises-watch {
+.premises-becollaborative .premises-watch::before {
   background-image: url('//i.vimeocdn.com/video/500302294_295x166.jpg');
 }
 
-.premises-beintuitive .premises-watch {
+.premises-beintuitive .premises-watch::before {
   background-image: url('//i.vimeocdn.com/video/500217687_960x540.jpg');
 }
 
-.premises-bepart .premises-watch {
+.premises-bepart .premises-watch::before {
   background-image: url('//i.vimeocdn.com/video/500195390_295x166.jpg');
 }
 
-.premises-betrue .premises-watch {
+.premises-betrue .premises-watch::before {
   background-image: url('//i.vimeocdn.com/video/500193645_960x540.jpg');
 }
 
-.premises-betrusted .premises-watch {
+.premises-betrusted .premises-watch::before {
   background-image: url('//i.vimeocdn.com/video/500250027_960x540.jpg');
 }
 
-.premises-beuseful .premises-watch {
+.premises-beuseful .premises-watch::before {
   background-image: url('//i.vimeocdn.com/video/500250354_960x540.jpg');
 }
 
-.premises-thinkahead .premises-watch {
+.premises-thinkahead .premises-watch::before {
   background-image: url('//i.vimeocdn.com/video/500250421_960x540.jpg');
 }
 
-.premises-thinkhigher .premises-watch {
+.premises-thinkhigher .premises-watch::before {
   background-image: url('//i.vimeocdn.com/video/500250510_295x166.jpg');
 }
 
-.premises-thinkmobile .premises-watch {
+.premises-thinkmobile .premises-watch::before {
   background-image: url('//i.vimeocdn.com/video/500250137_295x166.jpg');
 }
 
-.premises-thinkplural .premises-watch {
+.premises-thinkplural .premises-watch::before {
   background-image: url('//i.vimeocdn.com/video/500194496_960x540.jpg');
 }
