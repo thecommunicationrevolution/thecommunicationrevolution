@@ -84,10 +84,14 @@ h3 {
       margin-left: 1em;
       height: 100%;
       display: block;
+
+      &:first-child {
+        margin-left: 0;
+      }
     }
 
     .nav-list__item.logo {
-      margin: 0 2em 0 2.5em;
+      margin: 0 1em 0 2em;
       
       img {
         vertical-align: middle;
