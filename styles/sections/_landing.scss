@@ -14,6 +14,7 @@
     h3, h1 {
       margin-bottom: 1rem;
       opacity: 0;
+      text-shadow: .1rem .1rem .25rem rgba(0, 0, 0, .25);
       @include fadein(.5s, .5s);
     }
     
@@ -47,6 +48,17 @@
     }
   }
 
+  video {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transition: 1s opacity;
+  }
+
   .footer-link {
     position: absolute;
     bottom: 0;
@@ -72,6 +84,7 @@
       letter-spacing: .1rem;
       line-height: 1.15rem;
       padding-bottom: 3rem;
+      text-shadow: .1rem .1rem .25rem rgba(0, 0, 0, .25);
 
       span {
         color: red;
