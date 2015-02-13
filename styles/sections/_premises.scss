@@ -116,7 +116,7 @@
   width: 100%;
   height: 360px;
 
-  &::after, &:before {
+  &::after, &::before {
     position: absolute;
     top: 0;
     right: 0;
