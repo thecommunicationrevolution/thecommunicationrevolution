@@ -1,10 +1,12 @@
 var main,
+    header = require('./header'),
     styles = require('./styles'),
-    header = require('./header');
+    theater = require('./theater');
 
 main = function() {
   styles();
   header();
+  theater();
 };
 
 document.addEventListener('DOMContentLoaded', main);

@@ -1,0 +1,32 @@
+#theater {
+  position: fixed;
+  top: 65px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  @include radial-gradient(circle at 50% 50%, rgba(51, 51, 51, 0.7), rgba(0, 0, 0, 0.8));
+  opacity: 0;
+  @include transform(translateY(-100%));
+  @include transition(opacity 0.2s);
+  width: auto;
+  height: auto;
+
+  &.theater-hide {
+    opacity: 0;
+    @include transform(translateY(0));
+  }
+
+  &.theater-show {
+    opacity: 1;
+    @include transform(translateY(0));
+  }
+}
+
+#theater-player {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  box-shadow: 0 0 64px 0 rgba(0, 0, 0, 0.4);
+  @include calc(width, 80%);
+  @include calc(height, 80%);
+}
