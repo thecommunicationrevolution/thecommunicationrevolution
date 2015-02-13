@@ -1,4 +1,5 @@
-var scroll = require('./scroll');
+var scroll = require('./scroll'),
+    theater = require('./theater')
 var header,
     scrollButton,
     element,
@@ -11,6 +12,7 @@ function scrollToSection(e) {
   var section = document.getElementById(e.currentTarget.getAttribute('href')),
       elementScrollTop = section.offsetTop;
 
+  theater.hide();
   if (section.id !== 'landing')
     elementScrollTop -= 65;
 
