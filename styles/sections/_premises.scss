@@ -11,6 +11,8 @@
   left: 50%;
   display: block;
   @include transform(translate(-50%, -50%));
+  opacity: .5;
+  @include transition(opacity .5s);
   z-index: 15;
 }
 
@@ -31,6 +33,10 @@
     .premises-more {
       background-color: rgba(0, 0, 0, 0);
       border-color: rgba(0, 0, 0, 1);
+      opacity: 1;
+    }
+
+    .premises-play, .premises-hastag {
       opacity: 1;
     }
 
@@ -79,6 +85,8 @@
   width: 84px;
   height: 84px;
   z-index: 20;
+  opacity: .25;
+  @include transition(opacity 1s);
 }
 
 .premises-text {
