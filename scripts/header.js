@@ -1,6 +1,7 @@
 var scroll = require('./scroll'),
-    theater = require('./theater')
-var header,
+    theater = require('./theater'),
+    header,
+    video,
     scrollButton,
     element,
     status,
@@ -23,6 +24,7 @@ function scrollToSection(e) {
 }
 
 header = function() {
+  video = document.getElementById('video');
   element = document.getElementById('header');
   links = document.getElementsByTagName('a');
   scrollButton = document.getElementById('start-scroll');
@@ -36,9 +38,11 @@ header = function() {
   window.onscroll = function(e) {
     if (!status && document.body.scrollTop > 25) {
       element.classList.add('toggle');
+      video.pause();
       status = true;
     } else if (status && document.body.scrollTop < 25) {
       element.classList.remove('toggle');
+      video.play();
       status = false;
     }
   }
