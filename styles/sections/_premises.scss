@@ -66,12 +66,30 @@
   font-weight: 700;
   opacity: 0.6;
   padding: 0 1.5em;
-  @include transform(translateX(-50%));
-  @include transition(background-color 0.2s, border-color 0.2s, opacity 0.2s);
+  @include transform(translateX(-50%) translateZ(0));
+  @include transition(background-color 0.2s, border-color 0.2s, left 1s, opacity 0.2s, top 1s, width 1s, height 1s);
+  white-space: nowrap;
   height: 47px;
 
   &.premises-more:hover {
     background-color: rgba(255, 255, 255, 1);
+  }
+
+  &.premises-more.premises-freeze {
+    position: fixed;
+    background-color: rgba(255, 255, 255, 1);
+    border-color: rgba(0, 0, 0, 1);
+    color: rgb(255, 255, 255);
+    cursor: default;
+    opacity: 1;
+    @include transform(translateX(0) translateZ(0));
+    @include transition(color 0.1s);
+    z-index: 5;
+  }
+
+  &.premises-more.premises-transition {
+    border-color: rgba(0, 0, 0, 0);
+    @include transition(border-color 0.1s ease 0.3s, color 0.1s, left 0.4s, top 0.4s, width 0.4s, height 0.4s);
   }
 }
 
