@@ -13,7 +13,9 @@ function scrollToSection(e) {
   var section = document.getElementById(e.currentTarget.getAttribute('href')),
       elementScrollTop = section.offsetTop;
 
-  theater.hide();
+  if (wrapper.classList.contains('theater--open'))
+    theater.hide();
+
   if (section.id !== 'landing')
     elementScrollTop -= 65;
 
@@ -24,6 +26,7 @@ function scrollToSection(e) {
 }
 
 header = function() {
+  wrapper = document.getElementById('wrapper');
   video = document.getElementById('video');
   element = document.getElementById('header');
   links = document.getElementsByTagName('a');

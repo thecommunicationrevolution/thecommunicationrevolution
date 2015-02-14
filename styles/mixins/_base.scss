@@ -88,6 +88,7 @@ h3 {
   right: 0;
   z-index: 9999;
   opacity: 0;
+  background-color: transparent;
   height: 118px;
   @include fadein(.2s, 1.25s);
 

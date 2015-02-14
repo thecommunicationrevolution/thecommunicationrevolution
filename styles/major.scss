@@ -1,8 +1,8 @@
 @import 'bourbon';
 // general
+@import 'mixins/type';
 @import 'mixins/colors';
 @import 'mixins/animations';
-@import 'mixins/type';
 @import 'mixins/base';
 // section
 @import 'sections/landing';
