@@ -2,6 +2,7 @@ var bind,
     cache,
     dialog,
     header,
+    wrapper,
     video,
     hide,
     hidden,
@@ -21,11 +22,12 @@ bind = function(trigger) {
 };
 
 cache = function() {
+  wrapper = document.getElementById('wrapper');
   video  = document.getElementById('video');
   header = document.querySelector('#header');
   dialog = document.querySelector('#theater');
   player = document.querySelector('#theater-player');
-  triggers = [ ].slice.call(document.querySelectorAll('[data-theater-id]'));
+  triggers = [].slice.call(document.querySelectorAll('[data-theater-id]'));
 
   triggers.forEach(bind);
 };
@@ -39,7 +41,8 @@ hide = function() {
 hidden = function() {
   dialog.classList.remove('theater-hide');
   dialog.removeEventListener('transitionend', hidden);
-
+  wrapper.classList.remove('theater--open');
+  
   if (document.body.scrollTop < 25) {
     header.classList.remove('toggle');
     video.play();
@@ -50,7 +53,6 @@ hidden = function() {
 
 open = function(event) {
   var trigger = event.currentTarget;
-
   if (!trigger.dataset.theaterId.length) {
     throw 'theater called but no video id was given';
   }
@@ -69,7 +71,8 @@ show = function(id) {
   header.classList.add('toggle');
   video.pause();
 
-  // dialog.addEventListener('transitionend', shown);
+  dialog.addEventListener('transitionend', shown);
+  wrapper.classList.add('theater--open');
   dialog.classList.add('theater-show');
 };
 
