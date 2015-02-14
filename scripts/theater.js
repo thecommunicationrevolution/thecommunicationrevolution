@@ -2,6 +2,7 @@ var bind,
     cache,
     dialog,
     header,
+    video,
     hide,
     hidden,
     open,
@@ -20,6 +21,7 @@ bind = function(trigger) {
 };
 
 cache = function() {
+  video  = document.getElementById('video');
   header = document.querySelector('#header');
   dialog = document.querySelector('#theater');
   player = document.querySelector('#theater-player');
@@ -35,11 +37,13 @@ hide = function() {
 };
 
 hidden = function() {
-  dialog.removeEventListener('transitionend', hidden);
   dialog.classList.remove('theater-hide');
+  dialog.removeEventListener('transitionend', hidden);
 
-  if (document.body.scrollTop < 25)
+  if (document.body.scrollTop < 25) {
     header.classList.remove('toggle');
+    video.play();
+  }
 
   reset();
 };
@@ -62,7 +66,9 @@ show = function(id) {
   var source = '//player.vimeo.com/video/{{id}}?autoplay=1&badge=0&byline=0&portrait=0&title=0';
 
   player.setAttribute('src', source.replace('{{id}}', id));
+  console.log(theater-player)
   header.classList.add('toggle');
+  video.pause();
 
   dialog.addEventListener('transitionend', shown);
   dialog.classList.add('theater-show');
