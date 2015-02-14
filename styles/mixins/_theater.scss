@@ -10,7 +10,7 @@
   @include transition(opacity 0.2s);
   width: auto;
   height: auto;
-  z-index: 9999;
+  z-index: 99;
   
   &.theater-hide {
     opacity: 0;

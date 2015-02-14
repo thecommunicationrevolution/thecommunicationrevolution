@@ -66,11 +66,10 @@ show = function(id) {
   var source = '//player.vimeo.com/video/{{id}}?autoplay=1&badge=0&byline=0&portrait=0&title=0';
 
   player.setAttribute('src', source.replace('{{id}}', id));
-  console.log(theater-player)
   header.classList.add('toggle');
   video.pause();
 
-  dialog.addEventListener('transitionend', shown);
+  // dialog.addEventListener('transitionend', shown);
   dialog.classList.add('theater-show');
 };
 

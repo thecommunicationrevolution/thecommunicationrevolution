@@ -77,21 +77,26 @@ h3 {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 20;
+  z-index: 9999;
   opacity: 0;
   height: 118px;
-  @include transition(background-color 0.5s linear);
-  @include fadein(.5s, 1.25s);
+  @include fadein(.2s, 1.25s);
 
   .nav-list {
     margin: 0 auto;
     display: table;
-    height: 100%;
+    height: 118px;
+
+    nav {
+      height: 118px;
+      display: block;
+      width: 100%;
+    }
 
     .nav-list__item {
       float: left;
       margin-left: 1em;
-      height: 100%;
+      height: 118px;
       display: block;
 
       &:first-child {
@@ -100,6 +105,7 @@ h3 {
     }
 
     .nav-list__item.logo {
+
       margin: 0 1em 0 2em;
       
       img {
@@ -114,7 +120,7 @@ h3 {
       font-size: .95rem;
       text-decoration: none;
       line-height: 118px;
-      height: 100%;
+      height: 118px;
       display: block;
       text-shadow: .1rem .1rem .25rem rgba(0, 0, 0, .25);
 
@@ -129,7 +135,15 @@ h3 {
   background: black;
   height: 65px;
 
+  .nav-list {
+    height: 65px;
+  }
+  .nav-list__item {
+    height: 65px;
+  }
+
   .nav-list__item a {
+    height: 65px;
     line-height: 65px;
     padding-top: .25rem;
   }
