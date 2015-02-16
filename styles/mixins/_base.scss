@@ -174,8 +174,16 @@ h3 {
   min-height: 100%;
 }
 
+.hidden {
+  display: none;
+}
+
 // below the fold
 
 #premises {
+  visibility: hidden;
+}
+
+#about {
   visibility: hidden;
 }
