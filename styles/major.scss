@@ -1,8 +1,10 @@
+$em-base: 14px;
+
 @import 'bourbon';
-// general
+
 @import 'mixins/type';
 @import 'mixins/colors';
 @import 'mixins/animations';
 @import 'mixins/base';
-// section
+
 @import 'sections/landing';

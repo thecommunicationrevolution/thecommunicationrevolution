@@ -1,5 +1,9 @@
+$em-base: 14px;
+
 @import 'bourbon';
 
+@import 'mixins/portfolio';
 @import 'mixins/theater';
+
 @import 'sections/premises';
 @import 'sections/about';

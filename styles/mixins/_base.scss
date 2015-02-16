@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 
-body, button, h1, h2, ul, h3, p {
+body, button, dialog, h1, h2, ul, h3, p {
   margin: 0;
 }
 
@@ -41,7 +41,7 @@ dialog {
 
 html {
   color: rgb(0, 0, 0);
-  font-size: 14px;
+  font-size: $em-base;
 
   &:before {
     position: absolute;
@@ -176,6 +176,10 @@ h3 {
 
 .hidden {
   display: none;
+}
+
+.overlay {
+  overflow: hidden;
 }
 
 // below the fold
