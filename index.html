@@ -346,10 +346,14 @@
 
     <dialog class="portfolio portfolio-hidden">
       <template class="portfolio-template">
-        <li class="portfolio-video">
-          <button data-theater-id="{{video-id}}" class="portfolio-watch" style="background-image: url('{{video-picture}}')"></button>
-          <h3>{{video-name}}</h3>
-          <p>{{video-description}}</p>
+        <li class="portfolio-video clearfix">
+          <div class="left clearfix">
+            <button data-theater-id="{{video-id}}" class="portfolio-watch" style="background-image: url('{{video-picture}}')"></button>
+          </div>
+          <div class="right">
+            <h3>{{video-name}}</h3>
+            <p>{{video-description}}</p>  
+          </div>
         </li>
       </template>
 

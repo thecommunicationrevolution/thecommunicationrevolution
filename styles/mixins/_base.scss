@@ -23,6 +23,16 @@ button, html {
   @extend %type-raleway;
 }
 
+.clearfix { 
+    *zoom: 1;
+    
+    &:before, &:after {
+        clear: both;
+        content: " ";
+        display: block;
+    }
+}
+
 button {
   position: relative;
   background-color: transparent;
