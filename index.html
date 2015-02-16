@@ -345,6 +345,14 @@
     </svg>
 
     <dialog class="portfolio portfolio-hidden">
+      <template class="portfolio-template">
+        <li class="portfolio-video">
+          <button data-theater-id="{{video-id}}" class="portfolio-watch" style="background-image: url('{{video-picture}}')"></button>
+          <h3>{{video-name}}</h3>
+          <p>{{video-description}}</p>
+        </li>
+      </template>
+
       <header class="portfolio-header">
         <div class="portfolio-picture"></div>
         <h1 class="portfolio-name"></h1>

@@ -11,15 +11,16 @@ var bind,
     expanded,
     hide,
     hidden,
-    load,
     open,
     portfolios,
     premises,
+    reset,
     show,
     shown,
+    template,
     transition,
     triggers,
-    user = '31845909';
+    vimeo = require('./vimeo');
 
 portfolios = {
   '303834': {
@@ -158,6 +159,7 @@ cache = function() {
   dialogName = document.querySelector('.portfolio-name');
   dialogPicture = document.querySelector('.portfolio-picture');
   dialogVideos = document.querySelector('.portfolio-videos');
+  template = document.querySelector('.portfolio-template').innerHTML.trim().replace(/>\s+</g, '><');
   triggers = [ ].slice.call(document.querySelectorAll('[data-portfolio-id]'));
 };
 
@@ -175,6 +177,8 @@ hide = function() {
   dialog.removeEventListener('transitionend', hide);
   dialog.classList.add('portfolio-hide');
 
+  reset();
+
   window.requestAnimationFrame(function() {
     dialog.addEventListener('transitionend', hidden);
   });
@@ -191,11 +195,6 @@ hidden = function() {
   dialog.classList.add('portfolio-hidden');
 };
 
-load = function(id) {
-  var api = 'https://api.vimeo.com/users/{{user}}/portfolios/{{portfolio}}/videos',
-      xhr = new XMLHttpRequest();
-};
-
 open = function(event) {
   var trigger = event.currentTarget,
       id = trigger.dataset.portfolioId;
@@ -204,13 +203,36 @@ open = function(event) {
     throw 'premise called but no portfolio id was given';
   }
 
-  load(id);
+  vimeo.getVideosFromPortfolio(id, render);
   show(trigger, id);
 };
 
 premises = function() {
   cache();
   bind();
+};
+
+render = function(videos) {
+  videos.forEach(function(video) {
+    var description = video.description || '',
+        html,
+        id = video.uri;
+        picture = video.pictures.sizes.pop().link;
+
+    description = description.replace(/\n/g, '<br>');
+    id = id.replace(/^.+?([0-9]+)$/, '$1');
+
+    html = template.replace('{{video-description}}', description)
+                   .replace('{{video-id}}', id)
+                   .replace('{{video-name}}', video.name)
+                   .replace('{{video-picture}}', picture);
+
+    dialogVideos.insertAdjacentHTML('beforeend', html);
+  });
+};
+
+reset = function() {
+  dialogVideos.innerHTML = '';
 };
 
 show = function(trigger, id) {

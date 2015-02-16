@@ -11,7 +11,7 @@ dataFromEndpointLoaded = function(xhr, callback) {
     console.error(error);
   }
 
-  callback(data);
+  callback(data.data);
 };
 
 getDataFromEndpoint = function(endpoint, callback) {
