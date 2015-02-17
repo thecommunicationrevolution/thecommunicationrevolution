@@ -348,7 +348,7 @@
       <template class="portfolio-template">
         <li class="portfolio-video clearfix">
           <div class="left clearfix">
-            <button data-theater-id="{{video-id}}" class="portfolio-watch" style="background-image: url('{{video-picture}}')"></button>
+            <iframe src="//player.vimeo.com/video/{{video-id}}?autoplay=0&badge=0&byline=0&portrait=0&title=0" class="portfolio-watch" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
           </div>
           <div class="right">
             <h3>{{video-name}}</h3>
@@ -365,9 +365,7 @@
 
       <section class="portfolio-body">
         <h2 class="portfolio-title">
-          Os pensadores
-
-          <button class="portfolio-close">&#215;</button>
+          Os pensadores<button class="portfolio-close">&#215;</button>
         </h2>
 
         <ul class="portfolio-videos"></ul>
