@@ -23,16 +23,6 @@ button, html {
   @extend %type-raleway;
 }
 
-.clearfix { 
-    *zoom: 1;
-    
-    &:before, &:after {
-        clear: both;
-        content: " ";
-        display: block;
-    }
-}
-
 button {
   position: relative;
   background-color: transparent;
@@ -84,6 +74,29 @@ h3 {
   font-weight: 300;
   font-size: 2rem;
   letter-spacing: .15rem;
+}
+
+.clearfix { 
+    *zoom: 1;
+    
+    &:before, &:after {
+        clear: both;
+        content: " ";
+        display: block;
+    }
+}
+
+.verticalAlign {
+  display: table;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  z-index: 5;
+  
+  .middle {
+    display: table-cell;
+    vertical-align: middle;
+  }
 }
 
 #wrapper {

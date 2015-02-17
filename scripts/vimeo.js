@@ -1,6 +1,7 @@
 var dataFromEndpointLoaded,
     getDataFromEndpoint,
     getVideosFromPortfolio,
+    cache = {};
 
 dataFromEndpointLoaded = function(xhr, callback) {
   var data;
@@ -15,9 +16,15 @@ dataFromEndpointLoaded = function(xhr, callback) {
 };
 
 getDataFromEndpoint = function(endpoint, callback) {
+  if (cache[endpoint])
+    return callback(cache[endpoint]);
+
   var xhr = new XMLHttpRequest();
 
-  xhr.addEventListener('load', dataFromEndpointLoaded.bind(window, xhr, callback));
+  xhr.addEventListener('load', dataFromEndpointLoaded.bind(window, xhr, function(data) {
+    cache[endpoint] = data;
+    callback(cache[endpoint]);
+  }));
 
   xhr.open('get', 'https://api.vimeo.com/me/' + endpoint + '?page=1&per_page=50&sort=date&direction=desc');
   xhr.setRequestHeader('Accept', 'application/vnd.vimeo.*+json;version=3.2');

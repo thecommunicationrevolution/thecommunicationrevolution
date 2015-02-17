@@ -213,22 +213,25 @@ premises = function() {
 };
 
 render = function(videos) {
-  videos.forEach(function(video) {
-    var description = video.description || '',
-        html,
-        id = video.uri;
-        picture = video.pictures.sizes.pop().link;
 
-    description = description.replace(/\n/g, '<br>');
-    id = id.replace(/^.+?([0-9]+)$/, '$1');
+  setTimeout(function(){
+    videos.forEach(function(video) {
+      var description = video.description || '',
+          html,
+          id = video.uri;
+          picture = video.pictures.sizes.pop().link;
 
-    html = template.replace('{{video-description}}', description)
-                   .replace('{{video-id}}', id)
-                   .replace('{{video-name}}', video.name)
-                   .replace('{{video-picture}}', picture);
+      description = description.replace(/\n/g, '<br>');
+      id = id.replace(/^.+?([0-9]+)$/, '$1');
 
-    dialogVideos.insertAdjacentHTML('beforeend', html);
-  });
+      html = template.replace('{{video-description}}', description)
+                     .replace('{{video-id}}', id)
+                     .replace('{{video-name}}', video.name)
+                     .replace('{{video-picture}}', picture);
+
+      dialogVideos.insertAdjacentHTML('beforeend', html);
+    });
+  }, 500);
 };
 
 reset = function() {
