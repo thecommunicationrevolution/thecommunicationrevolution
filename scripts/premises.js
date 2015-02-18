@@ -10,6 +10,7 @@ var bind,
     dialogVideos,
     expanded,
     hide,
+    loading,
     hidden,
     open,
     portfolios,
@@ -163,6 +164,7 @@ cache = function() {
   dialogVideos = document.querySelector('.portfolio-videos');
   template = document.querySelector('.portfolio-template').innerHTML.trim().replace(/>\s+</g, '><');
   triggers = [ ].slice.call(document.querySelectorAll('[data-portfolio-id]'));
+  loading = document.querySelector('.portfolio-loading');
 };
 
 close = function() {
@@ -215,7 +217,6 @@ premises = function() {
 };
 
 render = function(videos) {
-
   setTimeout(function(){
     videos.forEach(function(video) {
       var description = video.description || '',
@@ -232,6 +233,7 @@ render = function(videos) {
                      .replace('{{video-picture}}', picture);
 
       dialogVideos.insertAdjacentHTML('beforeend', html);
+      loading.classList.add('hidden');
     });
   }, 500);
 };
@@ -244,6 +246,7 @@ show = function(trigger, id) {
   var boundingClientRect = trigger.getBoundingClientRect(),
       portfolio = portfolios[id];
 
+  loading.classList.remove('hidden');
   _isOpen = true;
 
   dialog.addEventListener('transitionend', shown);
