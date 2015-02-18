@@ -13,7 +13,8 @@ var bind,
     shown,
     theater,
     triggers,
-    watch;
+    watch,
+    pause;
 
 bind = function(trigger) {
   dialog.addEventListener('click', hide);
@@ -26,7 +27,6 @@ cache = function() {
   video  = document.getElementById('video');
   header = document.querySelector('#header');
   dialog = document.querySelector('#theater');
-  player = document.querySelector('#theater-player');
   triggers = [].slice.call(document.querySelectorAll('[data-theater-id]'));
 
   triggers.forEach(bind);
@@ -42,8 +42,9 @@ hidden = function() {
   dialog.classList.remove('theater-hide');
   dialog.removeEventListener('transitionend', hidden);
   wrapper.classList.remove('theater--open');
-  
-  if (document.body.scrollTop < 25) {
+  dialog.removeChild(player);
+
+  if (window.scrollY < 25) {
     header.classList.remove('toggle');
     video.play();
   }
@@ -65,12 +66,20 @@ reset = function() {
 };
 
 show = function(id) {
-  var source = '//player.vimeo.com/video/{{id}}?autoplay=1&badge=0&byline=0&portrait=0&title=0';
+  var source = '//player.vimeo.com/video/{{id}}?autoplay=1&badge=0&byline=0&portrait=0&title=0&api=1';
 
-  player.setAttribute('src', source.replace('{{id}}', id));
   header.classList.add('toggle');
   video.pause();
 
+  player = null;
+  player = document.createElement('iframe');
+  player.setAttribute('id', 'theater-player')
+  player.setAttribute('webkitallowfullscreen', '');
+  player.setAttribute('mozallowfullscreen', '');
+  player.setAttribute('allowfullscreen', '');
+  player.setAttribute('src', source.replace('{{id}}', id));
+  dialog.appendChild(player);
+  
   dialog.addEventListener('transitionend', shown);
   wrapper.classList.add('theater--open');
   dialog.classList.add('theater-show');

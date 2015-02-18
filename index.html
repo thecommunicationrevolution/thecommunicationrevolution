@@ -348,7 +348,7 @@
       <template class="portfolio-template">
         <li class="portfolio-video clearfix">
           <div class="left clearfix">
-            <iframe src="//player.vimeo.com/video/{{video-id}}?autoplay=0&badge=0&byline=0&portrait=0&title=0" class="portfolio-watch" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+            <iframe src="//player.vimeo.com/video/{{video-id}}?autoplay=0&badge=0&byline=0&portrait=0&title=0&api=1" class="portfolio-watch" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
           </div>
           <div class="right">
             <h3>{{video-name}}</h3>
@@ -376,9 +376,7 @@
       </section>
     </dialog>
 
-    <dialog id="theater">
-      <iframe id="theater-player" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-    </dialog>
+    <dialog id="theater"></dialog>
 
   </div>
   <script src="build/scripts/main.js"></script>

@@ -39,11 +39,11 @@ header = function() {
   scrollButton.addEventListener('click', scrollToSection);
 
   window.onscroll = function(e) {
-    if (!status && document.body.scrollTop > 25) {
+    if (!status && window.scrollY > 25) {
       element.classList.add('toggle');
       video.pause();
       status = true;
-    } else if (status && document.body.scrollTop < 25) {
+    } else if (status && window.scrollY < 25) {
       element.classList.remove('toggle');
       video.play();
       status = false;
