@@ -1,5 +1,6 @@
 var scroll = require('./scroll'),
     theater = require('./theater'),
+    premises = require('./premises'),
     header,
     video,
     scrollButton,
@@ -12,6 +13,9 @@ function scrollToSection(e) {
   e.preventDefault();
   var section = document.getElementById(e.currentTarget.getAttribute('href')),
       elementScrollTop = section.offsetTop;
+
+  if (premises.isOpen())
+    premises.close();
 
   if (wrapper.classList.contains('theater--open'))
     theater.hide();

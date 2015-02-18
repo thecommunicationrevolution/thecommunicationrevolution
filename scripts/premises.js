@@ -20,6 +20,8 @@ var bind,
     template,
     transition,
     triggers,
+    isOpen,
+    _isOpen,
     vimeo = require('./vimeo');
 
 portfolios = {
@@ -191,8 +193,8 @@ hidden = function() {
   dialog.classList.remove('portfolio-hide');
   dialog.classList.remove('portfolio-show');
   document.body.classList.remove('overlay');
-
   dialog.classList.add('portfolio-hidden');
+  _isOpen = false;
 };
 
 open = function(event) {
@@ -242,6 +244,8 @@ show = function(trigger, id) {
   var boundingClientRect = trigger.getBoundingClientRect(),
       portfolio = portfolios[id];
 
+  _isOpen = true;
+
   dialog.addEventListener('transitionend', shown);
   dialog.classList.remove('portfolio-hidden');
 
@@ -269,6 +273,10 @@ shown = function() {
   });
 };
 
+isOpen = function() {
+  return _isOpen;
+}
+
 transition = function(trigger, id) {
   var height = Math.max(document.documentElement.clientHeight, window.innerHeight || 0),
       width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
@@ -281,4 +289,8 @@ transition = function(trigger, id) {
   trigger.style.height = height + 'px';
 };
 
-module.exports = premises;
+module.exports = {
+  init: premises,
+  close: close,
+  isOpen: isOpen
+};

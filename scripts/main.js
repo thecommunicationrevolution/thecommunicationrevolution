@@ -8,7 +8,7 @@ main = function() {
   styles();
   header();
   theater();
-  premises();
+  premises.init();
 };
 
 document.addEventListener('DOMContentLoaded', main);
