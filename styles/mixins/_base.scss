@@ -112,6 +112,10 @@ h3 {
   padding: 0;
 }
 
+.overlay-expanded #wrapper {
+  display: none;
+}
+
 .header {
   position: fixed;
   top: 0;

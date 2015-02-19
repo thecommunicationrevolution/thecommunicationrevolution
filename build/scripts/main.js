@@ -459,12 +459,13 @@ close = function() {
 expanded = function() {
   dialog.removeEventListener('transitionend', expanded);
   dialog.classList.add('portfolio-expanded');
+  document.body.classList.add('overlay-expanded');
 };
 
 hide = function() {
   dialog.removeEventListener('transitionend', hide);
   dialog.classList.add('portfolio-hide');
-
+  document.body.classList.remove('overlay-expanded');
   reset();
 
   window.requestAnimationFrame(function() {
@@ -571,10 +572,6 @@ shown = function() {
     dialog.addEventListener('transitionend', expanded);
   });
 };
-
-isOpen = function() {
-  return _isOpen;
-}
 
 transition = function(trigger, id) {
   var height = Math.max(document.documentElement.clientHeight, window.innerHeight || 0),
