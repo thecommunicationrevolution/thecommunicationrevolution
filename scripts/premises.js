@@ -22,7 +22,10 @@ var bind,
     transition,
     triggers,
     isOpen,
+    triggers,
+    playVideo,
     _isOpen,
+    theater = require('./theater'),
     vimeo = require('./vimeo');
 
 portfolios = {
@@ -235,7 +238,19 @@ render = function(videos) {
       dialogVideos.insertAdjacentHTML('beforeend', html);
       loading.classList.add('hidden');
     });
+
+    triggers = [].slice.call(dialogVideos.querySelectorAll('.portfolio-video-button'));
+
+    triggers.forEach(function(videoButton) {
+      videoButton.addEventListener('click', playVideo);
+    });
   }, 500);
+};
+
+playVideo = function(e) {
+  e.preventDefault();
+  var videoId = e.currentTarget.getAttribute('data-theater-id');
+  theater.show(videoId);
 };
 
 reset = function() {

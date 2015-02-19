@@ -52,21 +52,68 @@
   overflow: hidden;
   min-height: 270px;
 
-  iframe {
-    height: 197px;
-    width: 100%;
-  }
-
   button {
     display: block;
     width: 100%;
     height: 100%;
     position: absolute;
+    overflow: hidden;
 
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position-x: 0;
-    background-position-y: 0;
+    &::after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      content: '';
+      display: block;
+      width: auto;
+      height: auto;
+
+      @include linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3), $fallback: transparent);
+      background-color: rgba(0, 0, 0, 0.4);
+      z-index: 10;
+    }
+
+    .portfolio-video-picture {
+      background-size: cover;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      content: '';
+      display: block;
+      width: auto;
+      height: auto;
+      @include transform(scale(1) translateZ(0));
+      @include transition-property(transform);
+      @include transition-duration(.65s);
+      z-index: 5;
+    }
+
+    .video-play {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      fill: rgb(255, 255, 255);
+      @include transform(translate(-50%, -50%));
+      width: 84px;
+      height: 84px;
+      z-index: 20;
+      opacity: .25;
+      @include transition(opacity 1s);
+    }
+
+    &:hover {
+      .video-play {
+        opacity: 1;
+      }
+
+      .portfolio-video-picture {
+        @include transform(scale(1.1) translateZ(0));
+      }
+    }
   }
 
   h3 {
@@ -88,12 +135,14 @@
 
 .portfolio-close {
   position: absolute;
-  top: 0.05rem;
+  top: -9px;
   right: 0;
   font-size: 3rem;
   line-height: 1.4rem;
   opacity: 0.6;
-  padding: 0.1rem 0 0.4rem 0.2rem;
+  padding: 0;
+  width: 40px;
+  height: 40px;
   @include transition(opacity 0.1s);
 
   &:hover {
