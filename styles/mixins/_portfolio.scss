@@ -19,7 +19,9 @@
   right: 0;
   left: 40%;
   bottom: 0;
-  overflow: auto;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
 }
 
 .portfolio-videos {
