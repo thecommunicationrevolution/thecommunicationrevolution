@@ -292,8 +292,4 @@ transition = function(trigger, id) {
   trigger.style.height = height + 'px';
 };
 
-module.exports = {
-  init: premises,
-  close: close,
-  isOpen: isOpen
-};
+module.exports = premises;

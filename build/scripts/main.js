@@ -212,8 +212,6 @@ exports.cancel = function(id){
 
 },{}],3:[function(require,module,exports){
 var scroll = require('./scroll'),
-    theater = require('./theater'),
-    premises = require('./premises'),
     header,
     video,
     scrollButton,
@@ -226,12 +224,6 @@ function scrollToSection(e) {
   e.preventDefault();
   var section = document.getElementById(e.currentTarget.getAttribute('href')),
       elementScrollTop = section.offsetTop;
-
-  if (premises.isOpen())
-    premises.close();
-
-  if (wrapper.classList.contains('theater--open'))
-    theater.hide();
 
   if (section.id !== 'landing')
     elementScrollTop -= 65;
@@ -270,7 +262,7 @@ header = function() {
 
 module.exports = header;
 
-},{"./premises":5,"./scroll":6,"./theater":8}],4:[function(require,module,exports){
+},{"./scroll":6}],4:[function(require,module,exports){
 var main,
     header = require('./header'),
     premises = require('./premises'),
@@ -281,7 +273,7 @@ main = function() {
   styles();
   header();
   theater();
-  premises.init();
+  premises();
 };
 
 document.addEventListener('DOMContentLoaded', main);
@@ -581,11 +573,7 @@ transition = function(trigger, id) {
   trigger.style.height = height + 'px';
 };
 
-module.exports = {
-  init: premises,
-  close: close,
-  isOpen: isOpen
-};
+module.exports = premises;
 
 },{"./vimeo":9}],6:[function(require,module,exports){
 var raf = require('raf-component'),
@@ -652,7 +640,6 @@ module.exports = styles;
 var bind,
     cache,
     dialog,
-    header,
     wrapper,
     video,
     hide,
@@ -676,7 +663,6 @@ bind = function(trigger) {
 cache = function() {
   wrapper = document.getElementById('wrapper');
   video  = document.getElementById('video');
-  header = document.querySelector('#header');
   dialog = document.querySelector('#theater');
   triggers = [].slice.call(document.querySelectorAll('[data-theater-id]'));
 
@@ -694,12 +680,8 @@ hidden = function() {
   dialog.removeEventListener('transitionend', hidden);
   wrapper.classList.remove('theater--open');
   dialog.removeChild(player);
-
-  if (window.scrollY < 25) {
-    header.classList.remove('toggle');
-    video.play();
-  }
-
+  video.play();
+  
   reset();
 };
 
@@ -719,7 +701,6 @@ reset = function() {
 show = function(id) {
   var source = '//player.vimeo.com/video/{{id}}?autoplay=1&badge=0&byline=0&portrait=0&title=0&api=1';
 
-  header.classList.add('toggle');
   video.pause();
 
   player = null;

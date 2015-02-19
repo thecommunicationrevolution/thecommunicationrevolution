@@ -117,7 +117,7 @@ h3 {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 9999;
+  z-index: 77;
   opacity: 0;
   background-color: transparent;
   height: 118px;
@@ -173,7 +173,7 @@ h3 {
   }
 }
 
-.header.toggle, .theater--open .header {
+.header.toggle {
   background: black;
   height: 65px;
 
