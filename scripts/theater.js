@@ -1,7 +1,6 @@
 var bind,
     cache,
     dialog,
-    header,
     wrapper,
     video,
     hide,
@@ -25,7 +24,6 @@ bind = function(trigger) {
 cache = function() {
   wrapper = document.getElementById('wrapper');
   video  = document.getElementById('video');
-  header = document.querySelector('#header');
   dialog = document.querySelector('#theater');
   triggers = [].slice.call(document.querySelectorAll('[data-theater-id]'));
 
@@ -43,12 +41,8 @@ hidden = function() {
   dialog.removeEventListener('transitionend', hidden);
   wrapper.classList.remove('theater--open');
   dialog.removeChild(player);
-
-  if (window.scrollY < 25) {
-    header.classList.remove('toggle');
-    video.play();
-  }
-
+  video.play();
+  
   reset();
 };
 
@@ -68,7 +62,6 @@ reset = function() {
 show = function(id) {
   var source = '//player.vimeo.com/video/{{id}}?autoplay=1&badge=0&byline=0&portrait=0&title=0&api=1';
 
-  header.classList.add('toggle');
   video.pause();
 
   player = null;
