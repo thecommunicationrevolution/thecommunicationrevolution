@@ -116,6 +116,19 @@
       display: none;
     }
   }
+
+  .portfolio-video button .portfolio-video-picture {
+    z-index: 444 !important;
+  }
+  
+  .portfolio-video button::after {
+    z-index: 555 !important;
+  }
+  
+  .portfolio-video button .video-play {
+    z-index: 666 !important;
+  }
+
   .portfolio-expanded .portfolio-body {
     width: 100%;
     position: static;
