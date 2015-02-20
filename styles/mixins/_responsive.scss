@@ -121,7 +121,7 @@
     z-index: 444 !important;
   }
   
-  .portfolio-video button::after {
+  .portfolio-video button, .portfolio-video button::after {
     z-index: 555 !important;
   }
   
@@ -135,6 +135,7 @@
   }
 
   .portfolio-videos .left {
+    z-index: 333 !important;
     width: 100% !important;
     float: inherit !important;
     display: block !important;
