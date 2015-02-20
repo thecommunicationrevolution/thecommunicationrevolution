@@ -37,15 +37,20 @@
 }
 
 .premises-item {
+
+}
+.premises-item {
   position: relative;
   background-color: rgba(0, 0, 0, 0);
   margin-bottom: 1px;
-  margin-right: 1px;
   display: block;
   float: left;
   @include transition(background-color 0.25s);
-  width: 340px;
   height: 716px;
+  padding-right: 1px;
+  width: 33.3333%;
+  max-width: 340px;
+  box-sizing: border-box;
 
   &:hover {
     background-color: rgba(0, 0, 0, 0.02);
@@ -66,7 +71,7 @@
   }
 
   &:nth-child(3n) {
-    margin-right: 0;
+    padding-right: 0;
   }
 }
 
