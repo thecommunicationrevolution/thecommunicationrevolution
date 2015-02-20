@@ -90,7 +90,9 @@
 
 @media (max-width: 959px) {
   .portfolio {
-    overflow: auto;
+    overflow-y: scroll !important;
+    overflow-x: hidden !important;
+    -webkit-overflow-scrolling: touch !important;
   }
 
   .portfolio-title {
