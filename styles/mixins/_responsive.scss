@@ -90,7 +90,7 @@
 
 @media (max-width: 959px) {
   .portfolio {
-    overflow: scroll !important;
+    overflow: auto;
   }
 
   .portfolio-title {
@@ -114,36 +114,33 @@
       display: none;
     }
   }
-
-  .portfolio-video button .portfolio-video-picture {
-    z-index: 444 !important;
-  }
-  
-  .portfolio-video button, .portfolio-video button::after {
-    z-index: 555 !important;
-  }
-  
-  .portfolio-video button .video-play {
-    z-index: 666 !important;
-  }
-
   .portfolio-expanded .portfolio-body {
     width: 100%;
-    position: initial;
-    overflow: initial;
+    position: static;
   }
 
   .portfolio-videos .left {
-    z-index: 333 !important;
     width: 100% !important;
     float: inherit !important;
     display: block !important;
+    position: inherit !important;
+    margin-bottom: 1rem;
   }
   .portfolio-videos .right {
     width: 100% !important;
     float: inherit !important;
     display: block !important;
-    margin-top: 250px !important;
+  }
+
+  .portfolio-video-picture {
+    -webkit-transform: none !important;
+    -moz-transform: none !important;
+    -ms-transform: none !important;
+    -o-transform: none !important;
+    transform: none !important;
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    transition: none !important;
   }
 
   .portfolio-videos {
