@@ -1,0 +1,35 @@
+@media (max-width: 752px) {
+  .nav {
+    display: none;
+  }
+
+  .nav-small {
+    display: block;
+  }
+
+  #landing {
+    .intro {
+      margin-top: -85px !important;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+    }
+
+    h3 {
+      font-size: 1rem;
+    }
+
+    .cc {
+      width: 30px;
+    }
+
+    .arrow {
+      display: none !important;
+    }
+
+    .grupo-rbs {
+      width: 85px;
+    }
+  }
+}
