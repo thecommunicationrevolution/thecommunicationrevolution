@@ -227,17 +227,17 @@ h3 {
   position: absolute;
   width: 35px;
   height: 45px;
-  right: 1rem;
-  top: 39px;
+  right: 1.5rem;
+  top: 21px;
   text-decoration: none;
   z-index: 99;
 }
 
 .nav-small-button-bar {
   display: block;
-  height: 1px;
+  height: 2px;
   background: white;
-  margin-bottom: 10px;
+  margin-bottom: .65rem;
   width: 100%;
   border-radius: 1rem;
 }
@@ -248,8 +248,8 @@ h3 {
   text-align: center;
 
   img {
-    width: 220px;
-    margin: 1rem -.5rem 0 0;
+    margin: 10px 0 0 0;
+    width: 158px;
   }
 }
 
