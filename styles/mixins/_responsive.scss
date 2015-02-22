@@ -55,17 +55,13 @@
       }
     }
 
-    .project-grid .grid__item-premises, .project-grid .grid__item-cc, .project-grid .grid__item-video, .project-grid .grid__item-specification, .project-grid .grid__item-author, .project-grid .grid__item-grupo-rbs {
+    .project-grid .grid__item-data, .project-grid .grid__item-premises, .project-grid .grid__item-cc, .project-grid .grid__item-video, .project-grid .grid__item-specification, .project-grid .grid__item-author, .project-grid .grid__item-grupo-rbs {
       display: none;
     }
 
     .project-grid .grid__item-welcome {
       left: 0;
-      width: 80%;
-      height: 100%;
-    }
-
-    .project-grid .grid__item-data {
+      width: 100%;
       height: 100%;
     }
   }
@@ -116,6 +112,7 @@
       display: none;
     }
   }
+
   .portfolio-expanded .portfolio-body {
     width: 100%;
     position: static;
@@ -128,6 +125,7 @@
     position: inherit !important;
     margin-bottom: 1rem;
   }
+
   .portfolio-videos .right {
     width: 100% !important;
     float: inherit !important;
