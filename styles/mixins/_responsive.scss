@@ -99,10 +99,18 @@
 }
 
 @media (max-width: 959px) {
+  .premises-play, .premises-hastag {
+    opacity: 1;
+  }
+
   .portfolio {
     overflow-y: scroll !important;
     overflow-x: hidden !important;
     -webkit-overflow-scrolling: touch !important;
+  }
+
+  .portfolio-video button .video-play {
+    opacity: 1;
   }
 
   .portfolio-title {
