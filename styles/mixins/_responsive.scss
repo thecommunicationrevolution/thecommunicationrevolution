@@ -36,12 +36,26 @@
   #premises {
     .premises-item {
       width: 100%;
-      height: 50em;
+      height: auto;
       max-width: inherit;
+      padding: 0 .5rem;
+    }
 
-      &:nth-child(1n) {
-        padding-right: 0px;
-      }
+    .premises-text {
+      padding: 1.5rem;
+    }
+
+    .premises-more {
+      position: inherit;
+      display: block;
+      margin: 0 auto 2rem auto;
+      left: inherit;
+      right: inherit;
+      top: inherit;
+      bottom: inherit;
+      transform: inherit;
+      background: white;
+      border-color: black;
     }
   }
 
