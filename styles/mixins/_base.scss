@@ -327,40 +327,14 @@ h3 {
 
 // below the fold
 
-#premises {
-  visibility: hidden;
-}
-
 #about {
   visibility: hidden;
 }
 
 #footer {
-  padding: 2rem 25%;
-  text-align: center;
-  color: black;
+  visibility: hidden;
+}
 
-  .terms-of-use {
-    width: auto;
-    background-color: rgba(0,0,0,0.02);
-    border: 1px solid rgba(0,0,0,0.06);
-    font-weight: 700;
-    opacity: 0.6;
-    padding: 0 1.5em;
-    -webkit-transition: background-color 0.2s,border-color 0.2s,opacity 0.2s;
-    -moz-transition: background-color 0.2s,border-color 0.2s,opacity 0.2s;
-    transition: background-color 0.2s,border-color 0.2s,opacity 0.2s;
-    white-space: nowrap;
-    height: 47px;
-
-    &:hover {
-      border-color: black;
-      background-color: white;
-    }
-  }
-
-  p {
-    margin: 1rem;
-    line-height: 1.5rem;
-  }
+#premises {
+  visibility: hidden;
 }

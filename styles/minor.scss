@@ -2,9 +2,10 @@ $em-base: 14px;
 
 @import 'bourbon';
 
+@import 'mixins/footer';
 @import 'mixins/manifest';
 @import 'mixins/portfolio';
 @import 'mixins/theater';
 
-@import 'sections/premises';
 @import 'sections/about';
+@import 'sections/premises';
