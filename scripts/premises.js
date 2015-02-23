@@ -199,7 +199,7 @@ hidden = function() {
 
 open = function(event) {
   var trigger = event.currentTarget,
-      id = trigger.dataset.portfolioId;
+      id = trigger.getAttribute('data-portfolio-id');
 
   if (!id.length) {
     throw 'premise called but no portfolio id was given';

@@ -50,7 +50,7 @@ manifest = function() {
 
 open = function(event) {
   var trigger = event.currentTarget,
-      id = trigger.dataset.manifestId;
+      id = trigger.getAttribute('data-manifest-id');
 
   if (!id.length) {
     throw 'manifest called but no id was given';

@@ -48,12 +48,14 @@ hidden = function() {
 };
 
 open = function(event) {
-  var trigger = event.currentTarget;
-  if (!trigger.dataset.theaterId.length) {
+  var trigger = event.currentTarget,
+      id = trigger.getAttribute('data-theater-id');
+
+  if (!id.length) {
     throw 'theater called but no video id was given';
   }
 
-  show(trigger.dataset.theaterId);
+  show(id);
 };
 
 reset = function() {
