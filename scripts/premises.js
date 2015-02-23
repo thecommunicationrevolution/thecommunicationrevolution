@@ -175,12 +175,6 @@ close = function() {
   dialog.classList.remove('portfolio-expanded');
 };
 
-expanded = function() {
-  dialog.removeEventListener('transitionend', expanded);
-  dialog.classList.add('portfolio-expanded');
-  document.body.classList.add('overlay-expanded');
-};
-
 hide = function() {
   dialog.removeEventListener('transitionend', hide);
   dialog.classList.add('portfolio-hide');
@@ -259,37 +253,18 @@ reset = function() {
 };
 
 show = function(trigger, id) {
-  var boundingClientRect = trigger.getBoundingClientRect(),
-      portfolio = portfolios[id];
-
-  loading.classList.remove('hidden');
-  _isOpen = true;
-
-  dialog.addEventListener('transitionend', shown);
-  dialog.classList.remove('portfolio-hidden');
-
-  dialog.style.top = boundingClientRect.top + 'px';
-  dialog.style.left = boundingClientRect.left + 'px';
-  dialog.style.width = trigger.offsetWidth + 'px';
-  dialog.style.height = trigger.offsetHeight + 'px';
+  var portfolio = portfolios[id];
 
   dialogDescription.innerHTML = portfolio.description;
   dialogPicture.style.backgroundImage = 'url("' + portfolio.picture + '")';
   dialogName.innerHTML = portfolio.name;
 
-  document.body.classList.add('overlay');
-  dialog.classList.add('portfolio-show');
-};
-
-shown = function() {
-  dialog.removeEventListener('transitionend', shown);
-  dialog.removeAttribute('style');
-
+  loading.classList.remove('hidden');
+  dialog.classList.remove('portfolio-hidden');
   dialog.classList.add('portfolio-expand');
-
-  window.requestAnimationFrame(function() {
-    dialog.addEventListener('transitionend', expanded);
-  });
+  dialog.classList.add('portfolio-expanded');
+  document.body.classList.add('overlay');
+  document.body.classList.add('overlay-expanded');
 };
 
 transition = function(trigger, id) {

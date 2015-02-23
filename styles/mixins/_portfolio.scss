@@ -1,7 +1,7 @@
 .portfolio {
   position: fixed;
   background-color: rgba(255, 255, 255, 0);
-  border: 1px solid rgba(0, 0, 0, 0);
+  border: 0;
   z-index: 88;
 }
 
@@ -170,7 +170,7 @@
 
 .portfolio-name {
   color: white;
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 400;
   line-height: 3rem;
   text-align: center;

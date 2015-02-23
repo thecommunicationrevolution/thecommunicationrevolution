@@ -176,7 +176,8 @@
     background: rgb(18, 52, 255);
     overflow: hidden;
 
-    h3 {
+    a {
+      text-decoration: none;
       color: white;
       font-weight: 800;
       text-align: center;
@@ -185,6 +186,8 @@
       width: 100%;
       font-size: 1.8em;
       margin-top: -30px;
+      padding: 5px;
+      text-transform: uppercase;
     }
 
     &::before {
@@ -221,14 +224,18 @@
     height: 30%;
     background: rgb(255, 234, 0);
 
-    h3 {
+    a {
+      text-decoration: none;
+      padding: 15px;
+      text-transform: uppercase;
+      color: black;
       font-weight: 800;
       text-align: center;
       position: absolute;
       top: 50%;
       width: 100%;
       font-size: 1.8em;
-      margin-top: -30px;
+      margin-top: -40px;
     }
   }
 
