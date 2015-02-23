@@ -31,6 +31,7 @@ cache = function() {
 };
 
 hide = function() {
+  document.body.classList.remove('overlay');
   dialog.addEventListener('transitionend', hidden);
   dialog.classList.remove('theater-show');
   dialog.classList.add('theater-hide');
@@ -76,6 +77,7 @@ show = function(id) {
   dialog.addEventListener('transitionend', shown);
   wrapper.classList.add('theater--open');
   dialog.classList.add('theater-show');
+  document.body.classList.add('overlay');
 };
 
 shown = function() {
