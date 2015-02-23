@@ -343,7 +343,7 @@ manifest = function() {
 
 open = function(event) {
   var trigger = event.currentTarget,
-      id = trigger.dataset.manifestId;
+      id = trigger.getAttribute('data-manifest-id');
 
   if (!id.length) {
     throw 'manifest called but no id was given';
@@ -565,7 +565,7 @@ hidden = function() {
 
 open = function(event) {
   var trigger = event.currentTarget,
-      id = trigger.dataset.portfolioId;
+      id = trigger.getAttribute('data-portfolio-id');
 
   if (!id.length) {
     throw 'premise called but no portfolio id was given';
@@ -759,12 +759,14 @@ hidden = function() {
 };
 
 open = function(event) {
-  var trigger = event.currentTarget;
-  if (!trigger.dataset.theaterId.length) {
+  var trigger = event.currentTarget,
+      id = trigger.getAttribute('data-theater-id');
+
+  if (!id.length) {
     throw 'theater called but no video id was given';
   }
 
-  show(trigger.dataset.theaterId);
+  show(id);
 };
 
 reset = function() {
