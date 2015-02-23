@@ -1,0 +1,77 @@
+.manifest {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 1);
+  width: auto;
+  height: auto;
+  z-index: 88;
+}
+
+.manifest-box {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: none;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 3.5rem;
+  width: auto;
+  height: auto;
+}
+
+.manifest-close {
+  position: absolute;
+  top: 3.5rem;
+  right: 3.5rem;
+  font-size: 3rem;
+  line-height: 1.4rem;
+  opacity: 0.6;
+  padding: 0.1rem 0 0.4rem 0.2rem;
+  @include transition(opacity 0.1s);
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.manifest-item {
+  margin-top: 1rem;
+}
+
+.manifest-list {
+  padding-left: 1.5rem;
+}
+
+.manifest-subtitle {
+  color: rgb(11, 12, 18);
+  font-size: rem(18);
+  font-weight: 400;
+  margin-top: 1rem;
+  text-transform: uppercase;
+}
+
+.manifest-text {
+  margin-top: 1rem;
+}
+
+.manifest-title {
+  color: rgb(11, 12, 18);
+  font-size: rem(24);
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+// modifiers
+
+.manifest-active {
+  display: block;
+}
+
+.manifest-hidden {
+  display: none;
+}
