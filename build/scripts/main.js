@@ -272,9 +272,10 @@ module.exports = function() {
   }
 };
 
-},{"./scroll":6}],4:[function(require,module,exports){
+},{"./scroll":7}],4:[function(require,module,exports){
 var main,
     header = require('./header'),
+    manifest = require('./manifest'),
     premises = require('./premises'),
     styles = require('./styles'),
     theater = require('./theater');
@@ -282,13 +283,87 @@ var main,
 main = function() {
   styles();
   header();
+  manifest();
   theater();
   premises();
 };
 
 document.addEventListener('DOMContentLoaded', main);
 
-},{"./header":3,"./premises":5,"./styles":7,"./theater":8}],5:[function(require,module,exports){
+},{"./header":3,"./manifest":5,"./premises":6,"./styles":8,"./theater":9}],5:[function(require,module,exports){
+var bind,
+    bindTriggers,
+    boxes,
+    cache,
+    dialog,
+    dialogClose,
+    hide,
+    manifest,
+    open,
+    show,
+    triggers;
+
+bind = function() {
+  dialogClose.addEventListener('click', hide);
+  triggers.forEach(bindTriggers);
+};
+
+bindTriggers = function(trigger) {
+  trigger.addEventListener('click', open);
+};
+
+cache = function() {
+  boxes = {
+    specification: document.querySelector('.manifest-specification'),
+    terms: document.querySelector('.manifest-terms')
+  };
+
+  dialog = document.querySelector('.manifest');
+  dialogClose = document.querySelector('.manifest-close');
+  triggers = [ ].slice.call(document.querySelectorAll('[data-manifest-id]'));
+};
+
+hide = function() {
+  var id;
+
+  for (id in boxes) {
+    if (boxes.hasOwnProperty(id)) {
+      boxes[id].classList.remove('manifest-active');
+    }
+  }
+
+  dialog.classList.add('manifest-hidden');
+  document.body.classList.remove('overlay');
+};
+
+manifest = function() {
+  cache();
+  bind();
+};
+
+open = function(event) {
+  var trigger = event.currentTarget,
+      id = trigger.dataset.manifestId;
+
+  if (!id.length) {
+    throw 'manifest called but no id was given';
+  }
+
+  show(id);
+};
+
+show = function(id) {
+  document.body.classList.add('overlay');
+  boxes[id].classList.add('manifest-active');
+  dialog.classList.remove('manifest-hidden');
+};
+
+manifest.hide = hide;
+manifest.show = show;
+
+module.exports = manifest;
+
+},{}],6:[function(require,module,exports){
 var bind,
     bindTriggers,
     cache,
@@ -572,7 +647,7 @@ transition = function(trigger, id) {
 
 module.exports = premises;
 
-},{"./theater":8,"./vimeo":9}],6:[function(require,module,exports){
+},{"./theater":9,"./vimeo":10}],7:[function(require,module,exports){
 var raf = require('raf-component'),
     ease = require('ease-component');
 
@@ -610,7 +685,7 @@ var scroll = function(to, options) {
 }
 
 module.exports = scroll;
-},{"ease-component":1,"raf-component":2}],7:[function(require,module,exports){
+},{"ease-component":1,"raf-component":2}],8:[function(require,module,exports){
 var link,
     loaded,
     styles;
@@ -633,7 +708,7 @@ styles = function() {
 
 module.exports = styles;
 
-},{}],8:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 var bind,
     cache,
     dialog,
@@ -734,7 +809,7 @@ theater.show = show;
 
 module.exports = theater;
 
-},{}],9:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 var dataFromEndpointLoaded,
     getDataFromEndpoint,
     getVideosFromPortfolio,
@@ -779,4 +854,4 @@ module.exports = {
   getVideosFromPortfolio: getVideosFromPortfolio
 };
 
-},{}]},{},[3,4,5,6,7,8,9]);
+},{}]},{},[3,4,5,6,7,8,9,10]);
