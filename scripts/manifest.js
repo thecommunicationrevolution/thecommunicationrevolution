@@ -52,8 +52,6 @@ open = function(event) {
   var trigger = event.currentTarget,
       id = trigger.dataset.manifestId;
 
-  console.log('manifest', id);
-
   if (!id.length) {
     throw 'manifest called but no id was given';
   }
