@@ -87,16 +87,14 @@
   position: absolute;
   bottom: 49px;
   left: 50%;
-  margin-left: -55px;
-  width: 110px;
   background-color: rgba(0, 0, 0, 0.02);
   border: 1px solid rgba(0, 0, 0, 0.06);
   font-weight: 700;
   opacity: 0.6;
-  padding: 0 1.5em;
+  padding: 1.15rem 1.5em;
   @include transition(background-color 0.2s, border-color 0.2s, left 1s, opacity 0.2s, top 1s);
+  @include transform(translateX(-50%));
   white-space: nowrap;
-  height: 47px;
 
   &.premises-more:hover {
     background-color: rgba(255, 255, 255, 1);
