@@ -1,5 +1,5 @@
 var babel = (function() {
-  var isEN = window.location.pathname.indexOf('/en/'),
+  var isEN = window.location.pathname.indexOf('/en/') != -1,
       isPT = !isEN;
 
   return {
