@@ -261,7 +261,7 @@ module.exports = function() {
   wrapper = document.getElementById('wrapper');
   video = document.getElementById('video');
   header = document.getElementById('header');
-  links = document.querySelectorAll('header nav li a, .nav-small-logo');
+  links = document.querySelectorAll('header nav .nav-list__item a, .nav-small-logo');
   scrollButton = document.getElementById('start-scroll');
   menuButton = document.getElementsByClassName('nav-small-button')[0];
 
