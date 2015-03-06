@@ -1,4 +1,5 @@
-var link,
+var babel = require('./babel'),
+    link,
     loaded,
     styles;
 
@@ -7,11 +8,17 @@ loaded = function() {
 };
 
 styles = function() {
+  var path = 'build/styles/';
+
+  if (!babel.isPT) {
+    path = '../' + path;
+  }
+
   link = document.createElement('link');
 
   link.addEventListener('load', loaded);
 
-  link.href = 'build/styles/minor.css';
+  link.href = path + 'minor.css';
   link.media = 'only x';
   link.rel = 'stylesheet';
 
