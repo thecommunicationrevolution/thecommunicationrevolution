@@ -211,6 +211,19 @@ exports.cancel = function(id){
 };
 
 },{}],3:[function(require,module,exports){
+var babel = (function() {
+  var isEN = window.location.pathname.indexOf('/en/'),
+      isPT = !isEN;
+
+  return {
+    isEN: isEN,
+    isPT: isPT
+  };
+})();
+
+module.exports = babel;
+
+},{}],4:[function(require,module,exports){
 var scroll = require('./scroll'),
     header,
     video,
@@ -272,7 +285,7 @@ module.exports = function() {
   }
 };
 
-},{"./scroll":7}],4:[function(require,module,exports){
+},{"./scroll":8}],5:[function(require,module,exports){
 var main,
     header = require('./header'),
     manifest = require('./manifest'),
@@ -290,7 +303,7 @@ main = function() {
 
 document.addEventListener('DOMContentLoaded', main);
 
-},{"./header":3,"./manifest":5,"./premises":6,"./styles":8,"./theater":9}],5:[function(require,module,exports){
+},{"./header":4,"./manifest":6,"./premises":7,"./styles":9,"./theater":10}],6:[function(require,module,exports){
 var bind,
     bindTriggers,
     boxes,
@@ -363,7 +376,7 @@ manifest.show = show;
 
 module.exports = manifest;
 
-},{}],6:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 var bind,
     bindTriggers,
     cache,
@@ -647,7 +660,7 @@ transition = function(trigger, id) {
 
 module.exports = premises;
 
-},{"./theater":9,"./vimeo":10}],7:[function(require,module,exports){
+},{"./theater":10,"./vimeo":11}],8:[function(require,module,exports){
 var raf = require('raf-component'),
     ease = require('ease-component');
 
@@ -685,8 +698,9 @@ var scroll = function(to, options) {
 }
 
 module.exports = scroll;
-},{"ease-component":1,"raf-component":2}],8:[function(require,module,exports){
-var link,
+},{"ease-component":1,"raf-component":2}],9:[function(require,module,exports){
+var babel = require('./babel'),
+    link,
     loaded,
     styles;
 
@@ -695,11 +709,17 @@ loaded = function() {
 };
 
 styles = function() {
+  var path = 'build/styles/';
+
+  if (!babel.isPT) {
+    path = '../' + path;
+  }
+
   link = document.createElement('link');
 
   link.addEventListener('load', loaded);
 
-  link.href = 'build/styles/minor.css';
+  link.href = path + 'minor.css';
   link.media = 'only x';
   link.rel = 'stylesheet';
 
@@ -708,7 +728,7 @@ styles = function() {
 
 module.exports = styles;
 
-},{}],9:[function(require,module,exports){
+},{"./babel":3}],10:[function(require,module,exports){
 var bind,
     cache,
     dialog,
@@ -813,7 +833,7 @@ theater.show = show;
 
 module.exports = theater;
 
-},{}],10:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
 var dataFromEndpointLoaded,
     getDataFromEndpoint,
     getVideosFromPortfolio,
@@ -858,4 +878,4 @@ module.exports = {
   getVideosFromPortfolio: getVideosFromPortfolio
 };
 
-},{}]},{},[3,4,5,6,7,8,9,10]);
+},{}]},{},[3,4,5,6,7,8,9,10,11]);
