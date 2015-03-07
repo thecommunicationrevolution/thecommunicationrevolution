@@ -88,6 +88,12 @@ portfolios = {
   '305382': {
     name: '#bepart',
     description: {
+      en: [
+        'The culture of participation rejects fortresses, tall and insurmountable walls.',
+        'The ivory tower is out: Where there are walls, create openings.',
+        'Join, share, get together, humanize yourself.',
+        'Investigate the many opportunities that the multidimensional world offers.'
+      ].join(' '),
       pt: [
         'A cultura da participação rejeita fortalezas, muros altos e intransponíveis.',
         'O encastelamento é inaceitável: onde ainda é muralha, construa aberturas.',
@@ -101,6 +107,12 @@ portfolios = {
   '307128': {
     name: '#thinkplural',
     description: {
+      en: [
+        'Dualism and polarization are proven restrictive.',
+        'Help build a culture of dialogue and collective creation on different platforms. Think open, flexible, multiple concepts.',
+        'Reject absolute truths. None deserves credit.',
+        'The truth is multifaceted and allows varying interpretations and narratives. Learn to contextualize.'
+      ].join(' '),
       pt: [
         'Dualismo e bipolarização são comprovadamente restritivos.',
         'Ajude a construir uma cultura do diálogo e da criação coletiva em diferentes plataformas. Pense conceitos abertos, flexíveis, múltiplos.',
@@ -113,6 +125,11 @@ portfolios = {
   '307853': {
     name: '#thinkmobile',
     description: {
+      en: [
+        'The world is in the cloud, accessible and without boundaries, and strong evidence points to it being in yet another equally unlikely space in the near future.',
+        'Accept the unimaginable. Assume the possibility of new formats and new configurations; mobile means living, it means convenience, it is to recreate experiences.',
+        'Think mobile and subvert old ideas of time and space.'
+      ].join(' '),
       pt: [
         'O mundo está em nuvem, acessível e sem fronteiras e há fortes indícios',
         'de que poderá estar, num futuro próximo, em outro lugar igualmente improvável.',
@@ -125,6 +142,12 @@ portfolios = {
   '308270': {
     name: '#bebeta',
     description: {
+      en: [
+        'Beta versions subvert the logic of industrial schedules and help consumers satisfy their desire to interact with makers.',
+        'Beta implies questioning, self-criticism and openness to change.',
+        'Don’t be overly attached to your ideas, be permeable, dissatisfied, restless.',
+        'Definitive is not for ever. Only the beta state is permanent.'
+      ].join(' '),
       pt: [
         'As versões beta subvertem a lógica dos cronogramas industriais e ajudam consumidores a satisfazer o desejo de interagir com quem produz.',
         'Beta pressupõe questionamento, autocrítica e abertura para a mudança.',
@@ -137,6 +160,12 @@ portfolios = {
   '316197': {
     name: '#thinkahead',
     description: {
+      en: [
+        'Abandon reductionist interpretations of the past.',
+        'When analyzing present day data, think outside the boxes of common sense.',
+        'Life produces mistakes and successes, learn from both. Go ahead, innovation requires courage, experimentation, learning and risk.',
+        'And profit is the reward of risk.'
+      ].join(' '),
       pt: [
         'Abandone as zonas de conforto e as certezas reducionistas do passado. Evite as fronteiras construídas pelo chamado senso comum.',
         'A vida produz erros e acertos, aprenda com ambos.',
@@ -148,6 +177,11 @@ portfolios = {
   '327936': {
     name: '#thinkhigher',
     description: {
+      en: [
+        'Raise your thought giving their deeper meanings purposes.',
+        'Business also exist to serve and improve the quality of people’s life. Produce communication that informs and forms.',
+        'Openness, social responsibility and gratitude are strong currencies . They create a proven virtuous circle for business. The profit has not lost its importance. Just is not the only reason for the companies.'
+      ].join(' '),
       pt: [
         'Eleve o pensamento atribuindo aos seus propósitos significados mais nobres.',
         'Business também existem para servir e melhorar a qualidade de vida das pessoas.',
@@ -162,7 +196,12 @@ portfolios = {
   '330902': {
     name: '#becollaborative',
     description: {
-        pt: [
+      en: [
+        'The advent of the digital age fragmented the labor market.',
+        'Whether from the corporations they work in, or from their home-offices, as free-lancers, the baby boomers and generations X, Y or Z are required to build alliances and learn to operate in a network.',
+        'Value today is in commitment to society, collaborative work, and the quality of what you and your allies deliver.'
+      ].join(' '),
+      pt: [
         'A era digital fragmentou o mercado de trabalho.',
         'Babyboomers, gerações X, Y ou Z, ligadas à corporações ou a home-offices, precisam construir alianças e aprender a operar em rede.',
         'Entenda que hoje o valor está no comprometimento coletivo, na colaboração e na qualidade do que você e seus aliados entregam.'
@@ -173,6 +212,9 @@ portfolios = {
   '331606': {
     name: '#beintuitive',
     description: {
+      en: [
+        'Intuition means to "see" with all your senses, to apply a watchful, comprehensive and decoding eye in the search for wisdom. Observation is the vantage point of intuition, revealing, anticipating, predicting and, not least of all, looking for answers in their usual abode: in the gaps invisibly connecting one event to another. The world needs intelligence and wisdom.'
+      ].join(' '),
       pt: [
         'Intuir significa olhar com atenção, ver com todos os sentidos.',
         'A sabedoria resulta deste olhar atento e observador.',
@@ -185,6 +227,10 @@ portfolios = {
   '331446': {
     name: '#beuseful',
     description: {
+      en: [
+        'Usefulness is a subjective value that’s in direct proportion to a degree of satisfaction. Usefulness, therefore, translates into perception and so it is not in what you do, but in how what you do is perceived.',
+        'Base yourself on the premises of this study to enhance the way others perceive what you do as being useful, and find in The Communication (R)evolution the knowledge needed to improve the life of the general population.'
+      ].join(' '),
       pt: [
         'Utilidade é um valor subjetivo diretamente relacionado a um grau de satisfação. Portanto, utilidade é percepção. Ela não está no que você realiza, mas no modo como o que você realiza é percebido.',
         'Use as premissas deste estudo para aumentar nos outros a percepção de utilidade naquilo que você faz e descubra em "The Communication Revolution" conhecimento capaz de fazer diferença na sua vida, e na vida dos demais.'
