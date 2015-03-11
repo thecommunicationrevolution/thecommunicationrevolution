@@ -1,0 +1,2 @@
+.PHONY: scripts lol
+.SILENT:
