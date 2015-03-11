@@ -1,6 +1,6 @@
 WEBPACK=node_modules/webpack/bin/webpack.js
 
-.PHONY: build scripts
+.PHONY: build clean scripts
 .SILENT:
 
 build: clean scripts
