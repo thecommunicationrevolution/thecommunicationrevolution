@@ -7,7 +7,6 @@
     ".gitignore",
     "bower.json",
     "divshot.json",
-    "en",
     "node_modules",
     "package.json",
     "scripts",
