@@ -1,7 +1,6 @@
 {
   "clean_urls": true,
   "name": "thecommunicationrevolution",
-  "root": "build",
   "routes": {
     "/": "index.html",
     "/en/": "en/index.html"
