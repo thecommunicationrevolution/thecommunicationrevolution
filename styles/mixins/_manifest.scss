@@ -47,6 +47,17 @@
   padding-left: 1.5rem;
 }
 
+.manifest-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  width: auto;
+  height: auto;
+}
+
 .manifest-subtitle {
   color: rgb(11, 12, 18);
   font-size: rem(18);
@@ -60,10 +71,48 @@
 }
 
 .manifest-title {
+  position: relative;
   color: rgb(11, 12, 18);
   font-size: rem(24);
   font-weight: 400;
   text-transform: uppercase;
+}
+
+.manifest-video {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+}
+
+.manifest-watch {
+  background: rgba(0, 0, 0, 0);
+  border: 2px solid rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
+  font-size: .85rem;
+  font-weight: 700;
+  margin: 0 auto;
+  padding: 1rem 1.25rem 1.25rem 3rem;
+  @include transition(background-color 0.25s linear);
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.25);
+  }
+
+  &::before {
+    position: absolute;
+    top: .8rem;
+    left: 1rem;
+    border-top: 0.85rem solid transparent;
+    border-bottom: 0.85rem solid transparent;
+    border-left: 15px solid white;
+    content: '';
+    width: 0;
+    height: 0;
+  }  
 }
 
 // modifiers
@@ -74,4 +123,25 @@
 
 .manifest-hidden {
   display: none;
+}
+
+.manifest-light {
+  .manifest-close, .manifest-text, .manifest-title {
+    color: rgb(255, 255, 255);
+  }
+}
+
+.manifest-sxsw {
+  .manifest-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 2rem;
+    font-weight: 300;
+    letter-spacing: 0.15rem;
+    text-align: center;
+    text-shadow: 0.1rem 0.1rem 0.25rem rgba(0, 0, 0, 0.25);
+    text-transform: uppercase;
+    @include transform(translate(-50%, -50%));
+  }
 }

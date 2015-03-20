@@ -22,6 +22,7 @@ bindTriggers = function(trigger) {
 cache = function() {
   boxes = {
     specification: document.querySelector('.manifest-specification'),
+    sxsw: document.querySelector('.manifest-sxsw'),
     terms: document.querySelector('.manifest-terms')
   };
 
@@ -50,18 +51,20 @@ manifest = function() {
 
 open = function(event) {
   var trigger = event.currentTarget,
-      id = trigger.getAttribute('data-manifest-id');
+      id = trigger.getAttribute('data-manifest-id'),
+      theme = trigger.getAttribute('data-manifest-theme') || 'dark';
 
   if (!id.length) {
     throw 'manifest called but no id was given';
   }
 
-  show(id);
+  show(id, theme);
 };
 
-show = function(id) {
+show = function(id, theme) {
   document.body.classList.add('overlay');
   boxes[id].classList.add('manifest-active');
+  dialog.classList.add('manifest-' + theme);
   dialog.classList.remove('manifest-hidden');
 };
 
