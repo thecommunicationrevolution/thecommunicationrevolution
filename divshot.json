@@ -1,5 +1,20 @@
 {
   "clean_urls": true,
+  "exclude": [
+    ".bowerrc",
+    ".divshot-cache",
+    ".git",
+    ".gitignore",
+    "bower.json",
+    "divshot.json",
+    "en",
+    "node_modules",
+    "package.json",
+    "scripts",
+    "styles",
+    "vendor",
+    "videos"
+  ],
   "name": "thecommunicationrevolution",
   "routes": {
     "/": "index.html",
