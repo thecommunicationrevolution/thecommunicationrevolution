@@ -141,7 +141,7 @@
     letter-spacing: 0.15rem;
     text-align: center;
     text-shadow: 0.1rem 0.1rem 0.25rem rgba(0, 0, 0, 0.25);
-    text-transform: uppercase;
     @include transform(translate(-50%, -50%));
+    width: 80%;
   }
 }
