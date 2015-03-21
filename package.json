@@ -10,7 +10,7 @@
     "build": "npm run clean; npm run tree; cp videos/* build/videos; npm run images; npm run scripts; npm run styles",
     "clean": "rm -f build/images/*; rm -f build/scripts/*; rm -f build/styles/*; rm -f npm-debug.log",
     "images": "node_modules/imagemin/cli.js images/* build/images",
-    "pack": "npm run build; zip -r tcr.zip build en index.html",
+    "pack": "zip -r tcr.zip build en index.html",
     "scripts": "node_modules/browserify/bin/cmd.js scripts/*.js -o build/scripts/main.js",
     "styles": "node_modules/node-sass/bin/node-sass --include-path vendor/bourbon/app/assets/stylesheets --output-style compressed styles/major.scss build/styles/major.css; node_modules/node-sass/bin/node-sass --include-path vendor/bourbon/app/assets/stylesheets --output-style compressed styles/minor.scss build/styles/minor.css",
     "tree": "mkdir -p build/styles; mkdir -p build/scripts; mkdir -p build/images; mkdir -p build/videos",
