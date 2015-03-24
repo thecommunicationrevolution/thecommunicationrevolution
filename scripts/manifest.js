@@ -1,4 +1,5 @@
-var bind,
+var active = false,
+    bind,
     bindTriggers,
     boxes,
     cache,
@@ -7,8 +8,11 @@ var bind,
     hide,
     manifest,
     open,
+    pause,
     show,
-    triggers;
+    setup,
+    triggers,
+    video;
 
 bind = function() {
   dialogClose.addEventListener('click', hide);
@@ -34,6 +38,9 @@ cache = function() {
 hide = function() {
   var id;
 
+  active = false;
+  pause();
+
   for (id in boxes) {
     if (boxes.hasOwnProperty(id)) {
       boxes[id].classList.remove('manifest-active');
@@ -47,6 +54,7 @@ hide = function() {
 manifest = function() {
   cache();
   bind();
+  setup();
 };
 
 open = function(event) {
@@ -61,14 +69,36 @@ open = function(event) {
   show(id, theme);
 };
 
+play = function(id) {
+  if (!active) return;
+  if (id) video = boxes[id].querySelector('.manifest-video');
+  if (video) video.play();
+};
+
+pause = function() {
+  if (video) {
+    video.pause();
+  }
+};
+
 show = function(id, theme) {
+  active = true;
+
   document.body.classList.add('overlay');
   boxes[id].classList.add('manifest-active');
   dialog.classList.add('manifest-' + theme);
   dialog.classList.remove('manifest-hidden');
+
+  play(id);
+};
+
+setup = function() {
+  boxes.sxsw.querySelector('.manifest-video').volume = 0.5;
 };
 
 manifest.hide = hide;
+manifest.pause = pause;
+manifest.play = play;
 manifest.show = show;
 
 module.exports = manifest;
