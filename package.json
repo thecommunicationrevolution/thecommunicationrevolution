@@ -9,6 +9,7 @@
   "scripts": {
     "build": "npm run clean; npm run tree; cp videos/* build/videos; npm run images; npm run scripts; npm run styles",
     "clean": "rm -f build/images/*; rm -f build/scripts/*; rm -f build/styles/*; rm -f npm-debug.log",
+    "deploy": "divshot push development; divshot promote development staging; divshot promote staging production",
     "images": "node_modules/imagemin/cli.js images/* build/images",
     "pack": "zip -r tcr.zip build en index.html",
     "scripts": "node_modules/browserify/bin/cmd.js scripts/*.js -o build/scripts/main.js",
