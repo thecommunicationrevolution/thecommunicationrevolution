@@ -46,16 +46,14 @@
     }
 
     .premises-more {
-      position: inherit;
+      position: static;
+      top: auto;
+      right: auto;
+      left: auto;
+      bottom: auto;
       display: block;
       margin: 0 auto 2rem auto;
-      left: inherit;
-      right: inherit;
-      top: inherit;
-      bottom: inherit;
-      transform: inherit;
-      background: white;
-      border-color: black;
+      @include transform(none);
     }
   }
 
