@@ -57,9 +57,10 @@
   button {
     display: block;
     width: 100%;
-    height: 100%;
+    height: auto;
     position: absolute;
     overflow: hidden;
+    @include calc(padding-top, '100% * 0.5625');
 
     &::after {
       position: absolute;
