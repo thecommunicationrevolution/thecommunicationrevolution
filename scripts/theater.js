@@ -5,6 +5,7 @@ var bind,
     video,
     hide,
     hidden,
+    manifest = require('./manifest'),
     open,
     player,
     reset,
@@ -42,7 +43,9 @@ hidden = function() {
   dialog.removeEventListener('transitionend', hidden);
   wrapper.classList.remove('theater--open');
   dialog.removeChild(player);
+
   video.play();
+  manifest.play();
   
   reset();
 };
@@ -66,6 +69,7 @@ show = function(id) {
   var source = '//player.vimeo.com/video/{{id}}?autoplay=1&badge=0&byline=0&portrait=0&title=0&api=1';
 
   video.pause();
+  manifest.pause();
 
   player = null;
   player = document.createElement('iframe');
