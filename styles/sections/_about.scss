@@ -2,7 +2,6 @@
   background-color: rgb(255, 255, 255);
   color: rgb(0, 0, 0);
   visibility: visible;
-  overflow: auto;
 }
 
 .about-title {
@@ -164,6 +163,7 @@
       left: 0;
       @include linear-gradient(-44deg, rgba(48, 34, 174, 0.25), rgba(199, 108, 215, 0.25), $fallback: rgb(144, 19, 254));
       background-image: url('../images/tile-future.png');
+      background-position: 50% 50%;
       background-size: cover;
       background-repeat: no-repeat;
       color: rgb(255, 255, 255);
@@ -189,6 +189,7 @@
       left: 0;
       background-color: rgb(189, 198, 195);
       background-image: url('../images/sxsw.png');
+      background-position: 50% 50%;
       background-repeat: no-repeat;
       background-size: cover;
       overflow: hidden;
