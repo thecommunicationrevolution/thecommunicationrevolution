@@ -26,7 +26,7 @@ getDataFromEndpoint = function(endpoint, callback) {
     callback(cache[endpoint]);
   }));
 
-  xhr.open('get', 'https://api.vimeo.com/me/' + endpoint + '?page=1&per_page=50&sort=date&direction=desc&api=1');
+  xhr.open('get', 'https://api.vimeo.com/me/' + endpoint + '?page=1&per_page=50&sort=default&api=1');
   xhr.setRequestHeader('Accept', 'application/vnd.vimeo.*+json;version=3.2');
   xhr.setRequestHeader('Authorization', 'bearer 339c8bb892a6729db7e7b89c6f56c588');
   xhr.send();
