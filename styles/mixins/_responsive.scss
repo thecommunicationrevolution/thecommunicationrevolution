@@ -107,6 +107,11 @@
 
       .manifest-text {
         font-size: 1rem;
+        margin-top: 3rem;
+
+        br {
+          display: none;
+        }
       }
 
       .manifest-title {
