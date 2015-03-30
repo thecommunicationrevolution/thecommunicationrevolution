@@ -384,6 +384,10 @@ h3 {
   display: block;
 }
 
+.videoless video {
+  display: none;
+}
+
 // below the fold
 
 #about {

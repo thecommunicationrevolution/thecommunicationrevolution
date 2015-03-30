@@ -10,6 +10,15 @@
     <noscript>
       <link href="../build/styles/minor.css" rel="stylesheet">
     </noscript>
+
+    <script>
+      var iOSVersion = +navigator.userAgent.replace(/.*iP(?:ad|hone) OS ([0-9]+(?:_[0-9]+)?).*/, '$1')
+                                           .replace('_', '.');
+
+      if (!isNaN(iOSVersion) && iOSVersion < 8) {
+        document.documentElement.className = (document.documentElement.className + ' videoless').trim();
+      }
+    </script>
   </head>
   <body>
   <div id="wrapper">
