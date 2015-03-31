@@ -8,9 +8,11 @@ var scroll = require('./scroll'),
     timer;
 
 function scrollToSection(e) {
-  e.preventDefault();
-  var section = document.getElementById(e.currentTarget.getAttribute('href')),
+  var target = e.currentTarget.getAttribute('href').substr(1),
+      section = document.getElementById(target),
       elementScrollTop = section.offsetTop;
+
+  e.preventDefault();
 
   header.classList.remove('nav-small--open');
 
