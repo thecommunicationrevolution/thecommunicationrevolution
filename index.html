@@ -10,15 +10,6 @@
     <noscript>
       <link href="build/styles/minor.css" rel="stylesheet">
     </noscript>
-
-    <script>
-      var iOSVersion = +navigator.userAgent.replace(/.*iP(?:ad|hone) OS ([0-9]+(?:_[0-9]+)?).*/, '$1')
-                                           .replace('_', '.');
-
-      if (!isNaN(iOSVersion) && iOSVersion < 8) {
-        document.documentElement.className = (document.documentElement.className + ' videoless').trim();
-      }
-    </script>
   </head>
   <body>
   <div id="wrapper">
@@ -57,7 +48,7 @@
 
     <!-- landing section -->
     <section id="landing" class="section">
-      <video id="video" autoplay loop>
+      <video id="video" autoplay loop class="background-video">
         <source src="build/videos/intro-video.mp4" type="video/mp4">
       </video>
       <div class="intro">
@@ -489,7 +480,7 @@
     </section>
 
     <section class="manifest-box manifest-sxsw">
-      <video loop poster="build/images/sxsw-poster.png" preload="auto" class="manifest-video">
+      <video loop poster="build/images/sxsw-poster.png" preload="auto" class="background-video manifest-video">
         <source src="build/videos/sxsw.mp4" type="video/mp4">
       </video>
 

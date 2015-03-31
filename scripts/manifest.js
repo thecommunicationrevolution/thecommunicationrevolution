@@ -7,6 +7,7 @@ var active = false,
     dialogClose,
     hide,
     manifest,
+    metrics = require('./metrics'),
     open,
     pause,
     show,
@@ -70,7 +71,7 @@ open = function(event) {
 };
 
 play = function(id) {
-  if (!active) return;
+  if (!active || metrics.isSmallScreen()) return;
   if (id) video = boxes[id].querySelector('.manifest-video');
   if (video) video.play();
 };

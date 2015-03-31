@@ -384,8 +384,10 @@ h3 {
   display: block;
 }
 
-.videoless video {
-  display: none;
+@media (max-width: 736px) {
+  .background-video {
+    display: none;
+  }
 }
 
 // below the fold
