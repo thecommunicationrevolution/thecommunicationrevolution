@@ -29,6 +29,15 @@
   top: 10%;
   left: 10%;
   box-shadow: 0 0 64px 0 rgba(0, 0, 0, 0.4);
-  @include calc(width, 80%);
-  @include calc(height, 80%);
+  width: 80%;
+  height: 80%;
+}
+
+// modifiers
+
+@media (max-width: 736px) and (orientation: portrait) {
+  #theater-player {
+    top: 30%;
+    height: 40%;
+  }
 }
